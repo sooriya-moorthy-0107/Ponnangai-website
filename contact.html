@@ -206,14 +206,20 @@
                 <div
                     class="bg-surface-container-lowest p-8 border-2 border-primary shadow-secondary-container hard-shadow-lg h-full">
                     <h2 class="font-headline-md text-headline-md text-primary mb-stack-lg">Send a Message</h2>
-                    <form class="flex flex-col gap-stack-md">
+                    <form class="flex flex-col gap-stack-md mt-6">
+                        <div id="success-alert" class="hidden relative p-4 border rounded-md bg-[#d1e7dd] text-[#0f5132] border-[#badbcc]" role="alert">
+                            <strong>Success!</strong> Your message has been sent successfully!
+                            <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3 text-xl font-bold text-[#0f5132] opacity-50 hover:opacity-100 focus:outline-none" onclick="document.getElementById('success-alert').classList.add('hidden')">
+                                <span>&times;</span>
+                            </button>
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
                             <div>
                                 <label class="font-label-bold text-label-bold text-on-surface block mb-2"
                                     for="name">Full Name</label>
                                 <input
                                     class="w-full p-4 bg-pure-white border-2 border-primary focus:border-secondary-container focus:ring-0 font-body-lg text-body-lg transition-colors"
-                                    id="name" placeholder="John Doe" type="text">
+                                    id="name" placeholder="Your name" type="text">
                             </div>
                             <div>
                                 <label class="font-label-bold text-label-bold text-on-surface block mb-2"
@@ -251,7 +257,7 @@
                         </div>
                         <button
                             class="mt-4 w-full bg-secondary-container text-on-secondary-container font-label-bold text-label-bold py-4 px-8 border-2 border-transparent hover:-translate-y-1 hover:border-black shadow-black hard-shadow hover:shadow-[6px_6px_0px_0px_#000] transition-all duration-200"
-                            type="button" onclick="alert('Your message has been sent successfully!')">
+                            type="button" onclick="sendToWhatsApp()">
                             Send Message
                         </button>
                     </form>
@@ -320,13 +326,36 @@
                 </div>
             </div>
             <div class="flex flex-col justify-end items-start md:items-end">
-                <p class="font-body-sm text-body-sm text-on-primary dark:text-primary-fixed">© 2024 Ponnangai
+                <p class="font-body-sm text-body-sm text-on-primary dark:text-primary-fixed">© 2026 Ponnangai
                     Enterprises. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name') ? document.getElementById('name').value : '';
+            const phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+            const email = document.getElementById('email') ? document.getElementById('email').value : '';
+            const subject = document.getElementById('subject') ? document.getElementById('subject').value : '';
+            const message = document.getElementById('message') ? document.getElementById('message').value : '';
 
+            const whatsappNumber = "917092148969";
+            
+            let text = `*New Inquiry via Website*\n\n`;
+            if (name) text += `*Name:* ${name}\n`;
+            if (phone) text += `*Phone:* ${phone}\n`;
+            if (email) text += `*Email:* ${email}\n`;
+            if (subject) text += `*Inquiry Type:* ${subject}\n\n`;
+            if (message) text += `*Message:* ${message}`;
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+            document.getElementById('success-alert').classList.remove('hidden');
+        }
+    </script>
 </body>
 
 </html>
