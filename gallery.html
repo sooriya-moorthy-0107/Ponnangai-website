@@ -1,0 +1,233 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Gallery - Ponnangai Enterprises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb876",
+                        "surface": "#f4fbfa",
+                        "inverse-on-surface": "#ebf2f2",
+                        "on-tertiary-fixed-variant": "#6b3b00",
+                        "on-primary-fixed": "#002020",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2b3232",
+                        "pure-white": "#FFFFFF",
+                        "inverse-primary": "#2ddbde",
+                        "on-primary-container": "#005354",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eef5f4",
+                        "on-surface-variant": "#3b4949",
+                        "surface-dim": "#d4dbdb",
+                        "on-secondary-container": "#613400",
+                        "surface-container-high": "#e2eae9",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fd9000",
+                        "surface-container": "#e8efef",
+                        "outline-variant": "#bac9c9",
+                        "on-surface": "#161d1d",
+                        "tertiary-fixed": "#ffdcc0",
+                        "primary-fixed-dim": "#2ddbde",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#8d4f00",
+                        "secondary-fixed-dim": "#ffb778",
+                        "outline": "#6b7a7a",
+                        "surface-variant": "#dde4e3",
+                        "background": "#f4fbfa",
+                        "deep-neutral": "#1A1A1A",
+                        "surface-tint": "#00696b",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#ffa54a",
+                        "on-secondary-fixed": "#2e1500",
+                        "sunny-yellow": "#FFD700",
+                        "primary-container": "#00ced1",
+                        "surface-container-highest": "#dde4e3",
+                        "on-primary-fixed-variant": "#004f51",
+                        "on-tertiary-container": "#6f3d00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6c3a00",
+                        "on-tertiary-fixed": "#2d1600",
+                        "primary-fixed": "#5af8fb",
+                        "secondary": "#8e4e00",
+                        "primary": "#00696b",
+                        "secondary-fixed": "#ffdcc1",
+                        "cerulean-blue": "#007BFF",
+                        "on-background": "#161d1d",
+                        "surface-bright": "#f4fbfa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-page": "max(24px, 5vw)"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Work Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Work Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-bold": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hard-shadow { box-shadow: 4px 4px 0px 0px var(--tw-shadow-color); }
+        .hard-shadow-lg { box-shadow: 8px 8px 0px 0px var(--tw-shadow-color); }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 6px 6px 0px 0px var(--tw-shadow-color); }
+        
+        /* Masonry Grid Setup */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+
+<link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen flex flex-col relative pt-20">
+<!-- TopNavBar -->
+<nav class="bg-pure-white dark:bg-deep-neutral text-primary dark:text-primary-fixed-dim font-label-bold text-label-bold fixed top-0 w-full z-50 border-b-2 border-primary dark:border-primary-fixed-dim flat no shadows flex justify-between items-center h-20 px-margin-page max-w-7xl mx-auto">
+<div class="flex items-center h-full">
+<div class="flex items-center gap-3">
+  <img src="assets/logo.png" alt="Ponnangai Enterprises Icon" class="h-12 w-auto object-contain">
+  <span class="font-headline-md text-headline-md text-primary font-extrabold tracking-tight whitespace-nowrap">Ponnangai Enterprises</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="about.html">About</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="products.html">Products</a>
+<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="contact.html">Contact</a>
+<button class="bg-sunny-yellow text-on-surface px-6 py-3 border-2 border-on-surface hard-shadow shadow-on-surface hover-lift transition-transform font-label-bold text-label-bold scale-95 active:scale-90" onclick="window.location.href='contact.html'">Enquire Now</button>
+</div>
+</nav>
+<!-- Header Section -->
+<header class="pt-section-gap pb-stack-lg px-margin-page max-w-7xl mx-auto w-full text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-md uppercase tracking-tighter">Product Gallery</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explore our extensive range of high-performance cleaning solutions designed for impeccable hygiene and energetic freshness.</p>
+</header>
+<!-- Masonry Gallery -->
+<main class="flex-grow px-margin-page max-w-7xl mx-auto w-full pb-section-gap relative">
+<div class="masonry-grid">
+<!-- Category: Laundry -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-[4/3] bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Laundry Products" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Vibrant, flat-style photograph of high-end liquid laundry detergent bottles arranged neatly on a solid white surface. Strong directional lighting casts hard-edged shadows, emphasizing the vivid teal and sunny yellow liquid inside the clear plastic containers. The aesthetic is extremely clean, modern, and energetic, perfectly aligning with a premium housekeeping brand. High contrast, sharp focus, no blurs." src="assets/products/32.png">
+<div class="absolute top-stack-sm right-stack-sm bg-sunny-yellow text-on-surface font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Laundry</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Fabric Care Solutions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tough on stains, gentle on fabrics, keeping linens sparkling clean and vividly fresh.</p>
+</div>
+<!-- Category: Surface -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-square bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Surface Cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Energetic flat-lay composition of surface cleaning sprays and microfiber cloths on a solid teal background. The items are arranged geometrically with precise spacing. Hard, graphic shadows define the edges of the brightly colored spray bottles (orange and yellow). The overall mood is vibrant, tactile, and highly organized, representing professional-grade hygiene. Crisp lighting, striking colors." src="assets/products/33.png">
+<div class="absolute top-stack-sm right-stack-sm bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Surface</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Multi-Surface Cleaners</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Industrial-strength degreasers and polishes for a streak-free, high-gloss finish on any hard surface.</p>
+</div>
+<!-- Category: Kitchen -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-[3/4] bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Kitchen Cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up, high-contrast shot of thick dishwashing gel being poured onto a bright yellow sponge. The background is a clean, solid white tile surface. The lighting is intense and directional, creating a hard black shadow behind the sponge. The focus is on the vibrant, neon-green cleaning liquid, emphasizing power and modern cleanliness. Flat-design aesthetic in photography." src="assets/products/34.png">
+<div class="absolute top-stack-sm right-stack-sm bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Kitchen</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Kitchen Hygiene</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Powerful degreasers and sanitizers designed to cut through stubborn culinary grease instantly.</p>
+</div>
+<!-- Category: Washroom -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-[16/9] bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Washroom Cleaning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sleek, modern bathroom cleaning products (toilet bowl cleaner, glass spray) arranged on a minimalist white counter. A solid bright orange accent wall is in the background. The lighting creates stark, graphic shadows that emphasize the bold silhouettes of the packaging. The image conveys ultimate sanitation, utilizing the brand's high-energy, flat color palette." src="assets/products/35.png">
+<div class="absolute top-stack-sm right-stack-sm bg-pure-white text-on-surface font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Washroom</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Restroom Sanitation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deep-cleaning descale formulas and disinfectants for pristine, odor-free washroom facilities.</p>
+</div>
+<!-- Category: Fragrances -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-square bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Room Fragrances" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Abstract, vibrant composition representing room fresheners. Colorful mist sprays from an elegant, teal-colored dispenser against a solid, sunny yellow backdrop. The mist is captured in sharp focus with high-speed photography, frozen in mid-air. Strong, unblurred shadows fall directly behind the dispenser. The style is modern, energetic, and completely devoid of soft gradients." src="assets/products/36.png">
+<div class="absolute top-stack-sm right-stack-sm bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Fragrances</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Ambient Fragrances</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Long-lasting, premium room fresheners that neutralize odors and leave a vibrant, welcoming scent.</p>
+</div>
+<!-- Category: Accessories -->
+<div class="masonry-item bg-pure-white border-2 border-primary p-stack-md transition-all duration-300 hover-lift shadow-secondary-container relative group">
+<div class="aspect-[4/5] bg-surface-container mb-stack-sm border-2 border-primary overflow-hidden relative">
+<img alt="Cleaning Accessories" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A neatly stacked arrangement of industrial cleaning accessories: vivid yellow mops, orange buckets, and teal heavy-duty gloves. The items are shot against a flat white background with bright, even lighting that produces hard, distinct shadows. The layout feels highly geometric and deliberate, perfectly matching the flat-design 2.0 brand identity of efficiency and power." src="assets/products/37.png">
+<div class="absolute top-stack-sm right-stack-sm bg-secondary text-on-secondary font-label-bold text-label-bold px-3 py-1 rounded-full border-2 border-on-surface">Accessories</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Tools &amp; Accessories</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Durable mops, heavy-duty buckets, and professional-grade wipers designed for rigorous daily use.</p>
+</div>
+</div>
+</main>
+<!-- Sticky Bulk Enquiry Banner -->
+<div class="fixed bottom-0 left-0 w-full bg-secondary-container text-on-secondary-container p-stack-sm z-40 border-t-2 border-on-surface shadow-[0_-8px_0_0_rgba(0,0,0,0.1)]">
+<div class="max-w-7xl mx-auto px-margin-page flex flex-col sm:flex-row justify-between items-center gap-stack-sm">
+<span class="font-headline-md text-headline-md uppercase tracking-tight">For bulk enquiry contact us</span>
+<a class="bg-pure-white text-on-surface px-6 py-2 border-2 border-on-surface hard-shadow shadow-on-surface hover-lift transition-transform font-label-bold text-label-bold inline-flex items-center gap-2" href="#">
+                Get a Quote <span class="material-symbols-outlined font-variation-settings-'FILL'-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary-fixed-variant text-on-primary dark:text-primary-fixed font-body-sm text-body-sm w-full bg-primary dark:bg-on-primary-fixed-variant flat no shadows grid grid-cols-1 md:grid-cols-3 gap-stack-lg px-margin-page py-section-gap w-full mt-auto mb-20 md:mb-0">
+<div class="flex flex-col gap-stack-md">
+<span class="font-headline-md text-headline-md font-extrabold text-sunny-yellow">Ponnangai Enterprises</span>
+<p class="opacity-80 max-w-sm">Delivering high-energy, pristine cleaning solutions for industrial and domestic excellence.</p>
+</div>
+<div class="flex flex-col gap-stack-sm md:items-center">
+<nav class="flex flex-col gap-2">
+<a class="text-on-primary/80 dark:text-primary-fixed/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 dark:text-primary-fixed/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-primary/80 dark:text-primary-fixed/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="contact.html">Bulk Enquiry</a>
+<a class="text-on-primary/80 dark:text-primary-fixed/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</nav>
+</div>
+<div class="flex flex-col gap-stack-sm md:items-end justify-end">
+<p class="">© 2024 Ponnangai Enterprises. All rights reserved.</p>
+</div>
+</footer>
+
+
+</body></html>
