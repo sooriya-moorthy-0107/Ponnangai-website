@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Products - Ponnangai Enterprises</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb876",
+                      "surface": "#f4fbfa",
+                      "inverse-on-surface": "#ebf2f2",
+                      "on-tertiary-fixed-variant": "#6b3b00",
+                      "on-primary-fixed": "#002020",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2b3232",
+                      "pure-white": "#FFFFFF",
+                      "inverse-primary": "#2ddbde",
+                      "on-primary-container": "#005354",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eef5f4",
+                      "on-surface-variant": "#3b4949",
+                      "surface-dim": "#d4dbdb",
+                      "on-secondary-container": "#613400",
+                      "surface-container-high": "#e2eae9",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#fd9000",
+                      "surface-container": "#e8efef",
+                      "outline-variant": "#bac9c9",
+                      "on-surface": "#161d1d",
+                      "tertiary-fixed": "#ffdcc0",
+                      "primary-fixed-dim": "#2ddbde",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#8d4f00",
+                      "secondary-fixed-dim": "#ffb778",
+                      "outline": "#6b7a7a",
+                      "surface-variant": "#dde4e3",
+                      "background": "#f4fbfa",
+                      "deep-neutral": "#1A1A1A",
+                      "surface-tint": "#00696b",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#ffa54a",
+                      "on-secondary-fixed": "#2e1500",
+                      "sunny-yellow": "#FFD700",
+                      "primary-container": "#00ced1",
+                      "surface-container-highest": "#dde4e3",
+                      "on-primary-fixed-variant": "#004f51",
+                      "on-tertiary-container": "#6f3d00",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#6c3a00",
+                      "on-tertiary-fixed": "#2d1600",
+                      "primary-fixed": "#5af8fb",
+                      "secondary": "#8e4e00",
+                      "primary": "#00696b",
+                      "secondary-fixed": "#ffdcc1",
+                      "cerulean-blue": "#007BFF",
+                      "on-background": "#161d1d",
+                      "surface-bright": "#f4fbfa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "stack-sm": "8px",
+                      "margin-page": "max(24px, 5vw)"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Work Sans"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Work Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-bold": [
+                              "Work Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .hard-shadow-hover:hover {
+            box-shadow: 8px 8px 0px 0px #FFD700;
+            transform: translateY(-8px);
+        }
+        .btn-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #1A1A1A;
+            transform: translateY(-2px);
+        }
+      </style>
+
+<link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased pt-20">
+<!-- TopNavBar from Shared Components -->
+<nav class="fixed top-0 w-full z-50 bg-pure-white border-b-2 border-primary border-b-2 border-primary flat no shadows">
+<div class="flex justify-between items-center h-20 px-margin-page max-w-7xl mx-auto">
+<a class="flex items-center gap-3" href="#"><img alt="Ponnangai Enterprises Icon" class="h-10 w-auto object-contain" src="assets/logo.png"><span class="font-headline-md text-headline-md text-primary font-extrabold whitespace-nowrap">Ponnangai Enterprises</span></a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-bold text-label-bold text-secondary border-b-2 border-secondary pb-1" href="products.html">Products</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="gallery.html">Gallery</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a class="hidden md:inline-flex bg-sunny-yellow text-deep-neutral font-label-bold text-label-bold px-6 py-3 rounded border-2 border-deep-neutral btn-shadow-hover transition-transform scale-95 active:scale-90" href="contact.html">Enquire Now</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Page Header -->
+<header class="bg-primary text-on-primary py-section-gap px-margin-page relative overflow-hidden">
+<div class="max-w-7xl mx-auto relative z-10">
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg font-display-lg-mobile text-display-lg-mobile mb-stack-lg">Our Cleaning Solutions</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-surface-container-high">Professional grade hygiene and housekeeping products designed for industrial, commercial, and residential excellence. High-contrast cleaning power in every drop.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined" style="font-size: 400px;">cleaning_services</span>
+</div>
+</header>
+<!-- Products Grid Section -->
+<main class="max-w-7xl mx-auto px-margin-page py-section-gap">
+<!-- Category Filter (Visual Only) -->
+<div class="flex flex-wrap gap-stack-md mb-section-gap">
+<span class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-surface hover:text-primary transition-colors">All Products</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">Laundry</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">Floor Care</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">Dish Washing</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">Washroom</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1: Floor Cleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Mockup of a sleek, bright teal 5L commercial floor cleaner plastic canister. The bottle is well-lit in a stark white studio environment, emphasizing a clean, clinical, high-contrast aesthetic typical of premium cleaning products. The cap is a vibrant citrus orange. Solid bold colors without gradients." class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" data-alt="Mockup of a sleek, bright teal 5L commercial floor cleaner plastic canister. The bottle is well-lit in a stark white studio environment, emphasizing a clean, clinical, high-contrast aesthetic typical of premium cleaning products. The cap is a vibrant citrus orange. Solid bold colors without gradients." src="assets/products/1.png">
+<div class="absolute top-4 left-4 bg-sunny-yellow text-deep-neutral font-label-bold text-label-bold px-3 py-1 rounded-full border border-deep-neutral">Floor</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-neutral mb-stack-sm flex-grow">Citrus Floor Polish</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-lg">Heavy-duty floor cleaner that cuts through industrial grease while leaving a brilliant shine.</p>
+<div class="flex flex-wrap gap-2 mb-stack-lg">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">5L</span>
+<span class="bg-surface-variant text-on-surface font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1L</span>
+<span class="bg-surface-variant text-on-surface font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1/2L</span>
+</div>
+<button class="w-full bg-pure-white text-primary border-2 border-primary font-label-bold text-label-bold py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" onclick="window.location.href='contact.html'">
+                    Enquire Now <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card 2: Laundry Detergent -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="A high-contrast mockup of a heavy-duty laundry liquid detergent in a white geometric jug with a bright yellow label. Photographed against a flat, solid teal background. The lighting is harsh and direct, creating strong, flat shadows that emphasize the product's modern, industrial strength. No gradients." class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" data-alt="A high-contrast mockup of a heavy-duty laundry liquid detergent in a white geometric jug with a bright yellow label. Photographed against a flat, solid teal background. The lighting is harsh and direct, creating strong, flat shadows that emphasize the product's modern, industrial strength. No gradients." src="assets/products/2.png">
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary">Laundry</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-neutral mb-stack-sm flex-grow">Oxy-Bright Detergent</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-lg">Commercial grade laundry liquid formulated for tough stain removal and fabric care.</p>
+<div class="flex flex-wrap gap-2 mb-stack-lg">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">5L</span>
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1L</span>
+</div>
+<button class="w-full bg-pure-white text-primary border-2 border-primary font-label-bold text-label-bold py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" onclick="window.location.href='contact.html'">
+                    Enquire Now <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card 3: Glass Cleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Clear glass cleaner spray bottle filled with striking cyan liquid. The bottle has a sharp, angled orange trigger spray head. Set against a pure white background with a hard-edge black shadow cast to the bottom right. The style is bold, flat, and extremely clean, highlighting commercial readiness." class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" data-alt="Clear glass cleaner spray bottle filled with striking cyan liquid. The bottle has a sharp, angled orange trigger spray head. Set against a pure white background with a hard-edge black shadow cast to the bottom right. The style is bold, flat, and extremely clean, highlighting commercial readiness." src="assets/products/11.png">
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-tertiary-container">Glass</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-neutral mb-stack-sm flex-grow">Streak-Free Crystal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-lg">Advanced formula glass and mirror cleaner that leaves zero residue for a perfect shine.</p>
+<div class="flex flex-wrap gap-2 mb-stack-lg">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1L</span>
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1/2L</span>
+</div>
+<button class="w-full bg-pure-white text-primary border-2 border-primary font-label-bold text-label-bold py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" onclick="window.location.href='contact.html'">
+                    Enquire Now <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card 4: Washroom -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Mockup of an industrial washroom descaler liquid in an opaque, robust orange plastic bottle with a black safety cap. The setting is a minimalist studio with high-key lighting, casting sharp graphic shadows. The overall aesthetic is energetic and hygienic, utilizing a flat-design inspired photographic style." class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" data-alt="Mockup of an industrial washroom descaler liquid in an opaque, robust orange plastic bottle with a black safety cap. The setting is a minimalist studio with high-key lighting, casting sharp graphic shadows. The overall aesthetic is energetic and hygienic, utilizing a flat-design inspired photographic style." src="assets/products/3.png">
+<div class="absolute top-4 left-4 bg-error-container text-on-error-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-error-container">Washroom</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-neutral mb-stack-sm flex-grow">Heavy Duty Descaler</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-stack-lg">Powerful acidic cleaner designed to remove stubborn scale and rust from washroom fixtures.</p>
+<div class="flex flex-wrap gap-2 mb-stack-lg">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">5L</span>
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 rounded-full text-xs">1L</span>
+</div>
+<button class="w-full bg-pure-white text-primary border-2 border-primary font-label-bold text-label-bold py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" onclick="window.location.href='contact.html'">
+                    Enquire Now <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</article>
+</div>
+</main>
+<!-- Sticky Bulk Enquiry Banner -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-secondary text-on-secondary py-stack-md px-margin-page border-t-2 border-deep-neutral flex flex-col md:flex-row justify-between items-center gap-stack-md shadow-[0_-8px_0_0_#FFD700]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">local_shipping</span>
+<div>
+<h4 class="font-label-bold text-label-bold">Need Commercial Quantities?</h4>
+<p class="font-body-sm text-body-sm opacity-90">Get special pricing on bulk orders.</p>
+</div>
+</div>
+<button class="bg-sunny-yellow text-deep-neutral font-label-bold text-label-bold px-8 py-3 rounded border-2 border-deep-neutral btn-shadow-hover transition-transform active:scale-95 whitespace-nowrap" onclick="window.location.href='contact.html'">
+            Request Bulk Quote
+        </button>
+</div>
+<!-- Footer from Shared Components -->
+<footer class="bg-primary w-full border-t-2 border-deep-neutral pb-24 md:pb-0">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg px-margin-page py-section-gap w-full max-w-7xl mx-auto">
+<div>
+<div class="font-headline-md text-headline-md font-extrabold text-sunny-yellow mb-stack-md">Ponnangai Enterprises</div>
+<p class="font-body-sm text-body-sm text-on-primary/80 mb-stack-lg">Delivering bright, structured cleaning solutions for every environment.</p>
+<div class="font-body-sm text-body-sm text-on-primary/80">© 2024 Ponnangai Enterprises. All rights reserved.</div>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="contact.html">Bulk Enquiry</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+<div class="flex flex-col gap-stack-sm text-on-primary/80 font-body-sm text-body-sm">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined">location_on</span> 123 Industrial Park, Clean City</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined">call</span> +1 (555) 123-4567</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined">mail</span> info@ponnangai.com</p>
+</div>
+</div>
+</footer>
+
+
+</body></html>
