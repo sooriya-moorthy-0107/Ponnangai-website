@@ -1,0 +1,41 @@
+.hard-shadow {
+    box-shadow: 8px 8px 0px 0px var(--tw-shadow-color);
+}
+.hard-shadow-sm {
+    box-shadow: 4px 4px 0px 0px var(--tw-shadow-color);
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+}
+.hard-shadow-hover:hover {
+    box-shadow: 8px 8px 0px 0px #161d1d;
+    transform: translateY(-4px) translateX(-4px);
+}
+.btn-primary {
+    transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 6px 6px 0px 0px #161d1d;
+}
+html { 
+    scroll-behavior: smooth; 
+}
+.no-scrollbar::-webkit-scrollbar { 
+    display: none; 
+}
+.no-scrollbar { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+
+/* Extracted inline styles */
+.material-filled {
+    font-variation-settings: 'FILL' 1;
+}
+.bg-about-hero {
+    background-image: url('../assets/products/professional.png');
+    background-size: cover;
+    background-position: center;
+}
