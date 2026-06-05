@@ -1,0 +1,874 @@
+<!DOCTYPE html><html lang="en" ><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Products - Ponnangai Enterprises</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+
+
+<link rel="icon" href="../assets/logo.png" type="image/png">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../js/tailwind-config.js"></script>
+<link rel="stylesheet" href="../css/main.css">
+<script src="../js/main.js" defer></script>
+
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased pt-20">
+<!-- TopNavBar from Shared Components -->
+<header class="bg-pure-white fixed top-0 w-full z-50 border-b-2 border-primary">
+<div class="flex justify-between items-center h-20 px-margin-page max-w-7xl mx-auto">
+<div class="flex items-center">
+<a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline">
+    <img src="../assets/logo.png" alt="Ponnangai Enterprises Logo" class="h-10 md:h-12 w-auto object-contain">
+    <span class="font-headline-md text-xl md:text-2xl font-bold text-primary dark:text-primary-fixed-dim whitespace-nowrap">Ponnangai Enterprises</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-4 lg:gap-gutter">
+    <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+    <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="about.html">About</a>
+    <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200 text-secondary border-b-2 border-secondary pb-1" href="products.html">Products</a>
+    <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
+</nav>
+<button class="hidden md:block bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 lg:px-6 lg:py-3 border-2 border-transparent hover:border-on-surface shadow-on-surface hover:hard-shadow-sm transition-all hover:-translate-y-0.5 active:scale-95" data-scroll-to="contact-form-section" data-fallback-href="contact.html">Enquire Now</button>
+<button class="md:hidden text-primary js-toggle-mobile-menu">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</header>
+<!-- Fixed Mobile Menu Drawer -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-pure-white shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-margin-page gap-6 border-l-4 border-primary">
+    <button class="js-toggle-mobile-menu absolute top-6 right-6 text-primary hover:text-secondary transition-colors">
+        <span class="material-symbols-outlined text-[36px]">close</span>
+    </button>
+    <a href="index.html" class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Home</a>
+    <a href="about.html" class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">About</a>
+    <a href="products.html" class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Products</a>
+    <a href="contact.html" class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Contact</a>
+    <button class="bg-sunny-yellow text-on-surface px-6 py-3 font-label-bold text-label-bold border-2 border-on-surface w-full mt-2 hard-shadow-sm active:scale-95" data-href="contact.html" class="cursor-pointer">ENQUIRE NOW</button>
+</div>
+<!-- Page Header -->
+<header class="bg-primary text-on-primary py-section-gap px-margin-page relative overflow-hidden">
+<div class="max-w-7xl mx-auto relative z-10">
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg font-display-lg-mobile text-display-lg-mobile mb-stack-lg">Our Cleaning Solutions</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-surface-container-high">Professional grade hygiene and housekeeping products designed for industrial, commercial, and residential excellence. High-contrast cleaning power in every drop.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined text-[400px]">cleaning_services</span>
+</div>
+</header>
+<!-- Products Grid Section -->
+<main class="max-w-7xl mx-auto px-margin-page py-section-gap">
+<!-- Category Filter (Visual Only) -->
+<div class="flex flex-wrap gap-stack-md mb-section-gap">
+<span class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-surface hover:text-primary transition-colors" data-filter-category="all">All Products</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors" data-filter-category="laundry">Laundry</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors" data-filter-category="floor care">Floor Care</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors" data-filter-category="dish washing">Dish Washing</span>
+<span class="bg-pure-white text-on-surface font-label-bold text-label-bold px-4 py-2 rounded-full border-2 border-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors" data-filter-category="washroom">Washroom</span>
+</div>
+
+<h2 class="font-display-lg text-display-lg font-extrabold text-primary mb-stack-md mt-section-gap border-b-4 border-sunny-yellow inline-block">5 Liter Can</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-stack-md md:gap-gutter">
+<!-- Product Card: Clothwash -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Clothwash" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Clothwash.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Clothwash</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort blue -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort blue" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Comfort_blue.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort blue</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Comfort_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Dishwash -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Dishwash" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Dishwash.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Dishwash</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floorcleaner yellow -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floorcleaner yellow" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Floorcleaner_yellow.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floorcleaner yellow</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floowcelaner pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floowcelaner pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Floowcelaner_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floowcelaner pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Glasscleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Glasscleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Glasscleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Glasscleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Phenyol -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Phenyol" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Phenyol.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Phenyol</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Tilescleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Tilescleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Tilescleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Tilescleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Toiletcleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Toiletcleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/5L_Toiletcleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">5 Liter Can</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Toiletcleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+</div>
+<h2 class="font-display-lg text-display-lg font-extrabold text-primary mb-stack-md mt-section-gap border-b-4 border-sunny-yellow inline-block">Retail Pack with Stickering</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-stack-md md:gap-gutter">
+<!-- Product Card: Blackphenyol -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Blackphenyol" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Blackphenyol.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Blackphenyol</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Clothwash -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Clothwash" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Clothwash.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Clothwash</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort blue -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort blue" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Comfort_blue.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort blue</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Comfort_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floorwash pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floorwash pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Floorwash_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floorwash pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floorwash yellow -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floorwash yellow" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Floorwash_yellow.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floorwash yellow</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Glasscleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Glasscleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Glasscleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Glasscleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Handwash green -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Handwash green" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Handwash_green.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Handwash green</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Handwash pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Handwash pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Handwash_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Handwash pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Handwash yellow -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Handwash yellow" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Handwash_yellow.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Handwash yellow</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Phenyol -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Phenyol" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Phenyol.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Phenyol</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Tilescleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Tilescleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Tilescleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Tilescleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Toiletcleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Toiletcleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/S_Toiletcleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack with Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Toiletcleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+</div>
+<h2 class="font-display-lg text-display-lg font-extrabold text-primary mb-stack-md mt-section-gap border-b-4 border-sunny-yellow inline-block">Retail Pack without Stickering</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-stack-md md:gap-gutter">
+<!-- Product Card: Ala -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Ala" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Ala.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Ala</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Clothwash -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Clothwash" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Clothwash.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Clothwash</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort blue -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort blue" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Comfort_blue.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort blue</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Comfort pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Comfort pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Comfort_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Comfort pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Dishwash -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Dishwash" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Dishwash.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Dishwash</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floorwash pink -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floorwash pink" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Floorwash_pink.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floorwash pink</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Floorwash yellow -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Floorwash yellow" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Floorwash_yellow.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Floorwash yellow</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Toiletcleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Toiletcleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/WOS_Toiletcleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Retail Pack without Stickering</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Toiletcleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+</div>
+<h2 class="font-display-lg text-display-lg font-extrabold text-primary mb-stack-md mt-section-gap border-b-4 border-sunny-yellow inline-block">Other Products</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-stack-md md:gap-gutter">
+<!-- Product Card: Antchalk -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Antchalk" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Antchalk.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Antchalk</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Bathsoap -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Bathsoap" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Bathsoap.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Bathsoap</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Bleaching -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Bleaching" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Bleaching.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Bleaching</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Checked cloth -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Checked cloth" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_checked_cloth.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Checked cloth</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Dishsoap -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Dishsoap" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Dishsoap.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Dishsoap</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Drain cleaner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Drain cleaner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Drain_cleaner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Drain cleaner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Eyetex airfreshner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Eyetex airfreshner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_eyetex_airfreshner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Eyetex airfreshner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Eyetex zipper -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Eyetex zipper" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_eyetex_zipper.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Eyetex zipper</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Garbage cover -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Garbage cover" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Garbage_cover.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Garbage cover</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Greenscrubber -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Greenscrubber" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Greenscrubber.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Greenscrubber</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Hardbroom -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Hardbroom" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Hardbroom.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Hardbroom</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Mat -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Mat" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Mat.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Mat</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: MiniScent -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="MiniScent" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_MiniScent.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">MiniScent</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: MopStick -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="MopStick" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_MopStick.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">MopStick</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Mop base -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Mop base" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Mop_base.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Mop base</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Multicake -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Multicake" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_multicake.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Multicake</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Napthelene balls -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Napthelene balls" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Napthelene balls.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Napthelene balls</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Odonil Airfreshner -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Odonil Airfreshner" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_odonil_Airfreshner.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Odonil Airfreshner</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Odonil roomSpray -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Odonil roomSpray" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_odonil_roomSpray.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Odonil roomSpray</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Odonil zipper -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Odonil zipper" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_odonil_zipper.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Odonil zipper</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: OmMurugaa -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="OmMurugaa" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_omMurugaa.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">OmMurugaa</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Oodubathi1 -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Oodubathi1" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_oodubathi1.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Oodubathi1</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Oodubathi2 -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Oodubathi2" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_oodubathi2.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Oodubathi2</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Plastic neScrubber -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Plastic neScrubber" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Plastic_neScrubber.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Plastic neScrubber</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Rat poison -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Rat poison" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Rat_poison.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Rat poison</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: RoomSpray box -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="RoomSpray box" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_RoomSpray_box.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">RoomSpray box</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Sambrani -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Sambrani" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Sambrani.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Sambrani</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Sambrani pcs -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Sambrani pcs" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_sambrani_pcs.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Sambrani pcs</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Silvershine -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Silvershine" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Silvershine.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Silvershine</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Softbroom -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Softbroom" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Softbroom.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Softbroom</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Steelscrubber -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Steelscrubber" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Steelscrubber.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Steelscrubber</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Tissuepacket -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Tissuepacket" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Tissuepacket.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Tissuepacket</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- Product Card: Toiletbrush -->
+<article class="bg-pure-white border-2 border-deep-neutral p-stack-sm md:p-stack-lg rounded transition-all duration-300 hard-shadow-hover flex flex-col h-full">
+<div class="relative mb-stack-md h-32 md:h-64 bg-surface-container-lowest border-2 border-outline-variant flex items-center justify-center overflow-hidden group">
+<img alt="Toiletbrush" class="object-contain h-4/5 transform group-hover:scale-105 transition-transform duration-300" src="../assets/products/o_Toiletbrush.png">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-3 py-1 rounded-full border border-primary-container opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 shadow-md">Other Products</div>
+</div>
+<h3 class="font-headline-md text-base md:text-headline-md text-deep-neutral mb-stack-sm flex-grow">Toiletbrush</h3>
+<button class="w-full mt-4 bg-pure-white text-primary border-2 border-primary text-[10px] md:font-label-bold md:text-label-bold py-2 md:py-3 rounded hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2" data-href="contact.html" class="cursor-pointer">
+<span class="md:hidden">Enquire</span><span class="hidden md:inline">Enquire Now</span> <span class="material-symbols-outlined hidden md:inline-block text-[20px]">arrow_forward</span>
+</button>
+</article>
+</div>
+
+</main>
+<!-- Sticky Bulk Enquiry Banner -->
+
+<!-- Footer from Shared Components -->
+<footer class="bg-primary w-full grid grid-cols-1 md:grid-cols-3 gap-stack-lg px-margin-page py-section-gap">
+<div>
+<span class="font-headline-md text-headline-md font-extrabold text-sunny-yellow block mb-stack-md">Ponnangai Enterprises</span>
+<p class="font-body-sm text-body-sm text-on-primary/80">© 2026 Ponnangai Enterprises. All rights reserved.</p>
+<p class="font-body-sm text-body-sm text-on-primary/80 max-w-xs mt-4">
+    <strong>Address:</strong><br>
+    Ponnangai Enterprises<br>
+    2, Muththamman Street, Muthuamman Nagar<br>Ayanavaram, Chennai - 600023<br>Tamil Nadu, India
+</p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-bold text-label-bold text-pure-white mb-2 uppercase">Quick Links</h4>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="about.html">Who We Are</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="contact.html">Get In Touch</a>
+<a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100" href="contact.html">Bulk Enquiry</a>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-primary/80 mb-stack-sm">Connect with us for sparkling clean solutions.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-on-primary-fixed-variant rounded-full flex items-center justify-center border border-on-primary/30 hover:bg-sunny-yellow hover:text-deep-neutral transition-colors cursor-pointer text-on-primary  js-open-mail-popup cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="w-10 h-10 bg-on-primary-fixed-variant rounded-full flex items-center justify-center border border-on-primary/30 hover:bg-sunny-yellow hover:text-deep-neutral transition-colors cursor-pointer text-on-primary  js-open-phone-popup cursor-pointer">
+<span class="material-symbols-outlined">call</span>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+<!-- Mail Popup -->
+<div id="mail-popup" class="fixed inset-0 bg-deep-neutral/80 hidden z-[100] flex items-center justify-center p-margin-page opacity-0 transition-opacity duration-300">
+    <div class="bg-pure-white p-8 border-4 border-primary rounded max-w-sm w-full text-center hard-shadow transform scale-95 transition-transform duration-300">
+        <h3 class="font-headline-md text-2xl text-primary mb-4">Stay Connected to Us</h3>
+        <p class="font-body-lg text-on-surface-variant mb-6"><strong>Email:</strong> <a href="mailto:ponnangaienterprises2003@gmail.com" class="text-secondary hover:underline break-all">ponnangaienterprises2003@gmail.com</a></p>
+        <button data-href="contact.html" class="cursor-pointer w-full bg-sunny-yellow text-primary font-label-bold py-3 border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95">Go to Contact Page</button>
+        <button class="js-close-mail-popup mt-4 text-on-surface-variant underline font-label-bold text-sm">Close</button>
+    </div>
+</div>
+
+
+<!-- Phone Popup -->
+<div id="phone-popup" class="fixed inset-0 bg-deep-neutral/80 hidden z-[100] flex items-center justify-center p-margin-page opacity-0 transition-opacity duration-300">
+    <div class="bg-pure-white p-8 border-4 border-primary rounded max-w-sm w-full text-center hard-shadow transform scale-95 transition-transform duration-300">
+        <h3 class="font-headline-md text-2xl text-primary mb-4">Stay Connected to Us</h3>
+        <p class="font-body-lg text-on-surface-variant mb-6"><strong>Phone:</strong> <a href="tel:8610126937" class="text-secondary hover:underline">8610126937</a></p>
+        <button data-href="contact.html" class="cursor-pointer w-full bg-sunny-yellow text-primary font-label-bold py-3 border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95">Go to Contact Page</button>
+        <button class="js-close-phone-popup mt-4 text-on-surface-variant underline font-label-bold text-sm">Close</button>
+    </div>
+</div>
+
+<!-- Floating Action Button -->
+
+
+<!-- Floating Action Button -->
+<div id="fab-container" class="fixed bottom-6 right-6 z-50 flex items-center justify-end transition-all duration-300 opacity-0 pointer-events-none translate-y-10">
+   <div id="fab-bar" class="hidden bg-secondary text-pure-white border-2 border-primary p-4 shadow-[0_8px_0_0_#FFD700] rounded-xl flex-col sm:flex-row items-center gap-4 mr-4 transition-all duration-300">
+       <div class="flex items-center gap-4">
+           <span class="material-symbols-outlined text-[32px] material-filled">local_shipping</span>
+           <div>
+               <h4 class="font-label-bold text-label-bold text-left">Need Commercial Quantities?</h4>
+               <p class="font-body-sm text-body-sm opacity-90 text-left">Get special pricing on bulk orders.</p>
+           </div>
+       </div>
+       <button class="bg-sunny-yellow text-deep-neutral font-label-bold text-label-bold px-6 py-2 rounded border-2 border-deep-neutral hover:-translate-y-1 hover:shadow-lg transition-transform active:scale-95 whitespace-nowrap" data-href="contact.html">
+           Request Bulk Quote
+       </button>
+   </div>
+   <button class="js-toggle-fab-bar bg-sunny-yellow text-primary rounded-full w-14 h-14 flex items-center justify-center border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95 relative z-10 pointer-events-auto">
+      <span id="fab-icon" class="material-symbols-outlined transition-transform duration-300 text-[28px]">request_quote</span>
+   </button>
+</div>
+
+</body>

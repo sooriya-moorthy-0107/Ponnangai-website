@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="light" lang="en" >
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ponnangai Enterprises | Brilliant Cleanliness</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+
+
+
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js" defer></script>
+
+</head>
+
+<body class="bg-background text-on-background font-body-lg antialiased">
+    <!-- TopNavBar -->
+    <header class="bg-pure-white fixed top-0 w-full z-50 border-b-2 border-primary">
+        <div class="flex justify-between items-center h-20 px-margin-page max-w-7xl mx-auto">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline">
+                    <img src="../assets/logo.png" alt="Ponnangai Enterprises Logo"
+                        class="h-10 md:h-12 w-auto object-contain">
+                    <span
+                        class="font-headline-md text-xl md:text-2xl font-bold text-primary dark:text-primary-fixed-dim whitespace-nowrap">Ponnangai
+                        Enterprises</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-4 lg:gap-gutter">
+                <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200 text-secondary border-b-2 border-secondary pb-1" href="index.html">Home</a>
+                <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200"
+                    href="about.html">About</a>
+                <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200"
+                    href="products.html">Products</a>
+                <a class="font-label-bold text-label-bold text-on-surface hover:text-secondary transition-colors duration-200"
+                    href="contact.html">Contact</a>
+            </nav>
+            <button
+                class="hidden md:block bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 lg:px-6 lg:py-3 border-2 border-transparent hover:border-on-surface shadow-on-surface hover:hard-shadow-sm transition-all hover:-translate-y-0.5 active:scale-95"
+                data-href="contact.html" class="cursor-pointer">Enquire Now</button>
+            <button class="md:hidden text-primary js-toggle-mobile-menu">
+                <span class="material-symbols-outlined text-[32px]">menu</span>
+            </button>
+        </div>
+    </header>
+    <!-- Fixed Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-pure-white shadow-2xl z-[100] transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-margin-page gap-6 border-l-4 border-primary">
+        <button class="js-toggle-mobile-menu absolute top-6 right-6 text-primary hover:text-secondary transition-colors">
+            <span class="material-symbols-outlined text-[36px]">close</span>
+        </button>
+        <a href="index.html"
+            class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Home</a>
+        <a href="about.html"
+            class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">About</a>
+        <a href="products.html"
+            class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Products</a>
+        <a href="contact.html"
+            class="font-label-bold text-label-bold text-on-surface hover:text-secondary w-full border-b border-surface-variant pb-2">Contact</a>
+        <button
+            class="bg-sunny-yellow text-on-surface px-6 py-3 font-label-bold text-label-bold border-2 border-on-surface w-full mt-2 hard-shadow-sm active:scale-95"
+            data-href="contact.html" class="cursor-pointer">ENQUIRE NOW</button>
+    </div>!-- Hero Section -->
+    <section
+        class="min-h-screen bg-primary flex items-center justify-center pt-28 px-margin-page relative overflow-hidden">
+        <!-- Abstract flat geometry for background -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <svg class="w-full h-full fill-current text-primary-fixed" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <polygon points="0,0 100,0 100,30 0,70"></polygon>
+                <circle cx="80" cy="80" r="15"></circle>
+                <rect height="20" width="20" x="10" y="80"></rect>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center z-10 relative">
+            <div class="flex flex-col items-start gap-stack-lg">
+                <h1
+                    class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-pure-white max-w-2xl">
+                    Bring Brilliant Cleanliness to Your Space!
+                </h1>
+                <p class="font-body-lg text-body-lg text-surface-container-low max-w-xl">
+                    High-performance, industrial-grade cleaning solutions engineered for absolute hygiene and radiant
+                    results. Flat, solid power in every drop.
+                </p>
+                <a class="bg-secondary-container text-on-secondary-container px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider border-2 border-on-surface btn-primary mt-4 inline-flex items-center gap-2"
+                    href="products.html">
+                    Explore Our Products
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+
+            <!-- Retail Carousel -->
+            <div class="relative w-full h-auto lg:h-[600px] mt-10 lg:mt-0 flex flex-col justify-center overflow-hidden">
+                <div id="retail-carousel"
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 px-4 no-scrollbar items-center">
+                    <!-- Card 1 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/S_Clothwash.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-primary text-pure-white inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Cloth Wash</h3>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/S_Comfort_blue.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-sunny-yellow text-on-surface inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Comfort Blue</h3>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/WOS_Dishwash.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-secondary-container text-on-secondary-container inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Dishwash Gel</h3>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/S_Floorwash_pink.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-primary text-pure-white inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Floor Cleaner</h3>
+                    </div>
+                    <!-- Card 5 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/S_Handwash_pink.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-sunny-yellow text-on-surface inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Handwash</h3>
+                    </div>
+                    <!-- Card 6 -->
+                    <div
+                        class="snap-center shrink-0 w-64 bg-pure-white p-4 border-2 border-on-surface hard-shadow flex flex-col hover:-translate-y-2 transition-transform">
+                        <div
+                            class="w-full h-48 bg-surface-variant border-2 border-on-surface mb-4 flex items-center justify-center p-2">
+                            <img src="../assets/products/S_Toiletcleaner.png" class="object-contain h-full">
+                        </div>
+                        <div
+                            class="bg-secondary-container text-on-secondary-container inline-block px-3 py-1 font-label-bold text-label-bold mb-2 rounded-full self-start">
+                            Retail</div>
+                        <h3 class="font-headline-md text-on-surface text-lg">Toilet Cleaner</h3>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-4 mt-2 mb-8 lg:mb-0">
+                    <button
+                        data-carousel-scroll="-280"
+                        class="w-10 h-10 bg-pure-white border-2 border-primary rounded-full flex items-center justify-center hover:bg-sunny-yellow hover:-translate-y-1 transition-all hard-shadow-sm">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button
+                        data-carousel-scroll="280"
+                        class="w-10 h-10 bg-pure-white border-2 border-primary rounded-full flex items-center justify-center hover:bg-sunny-yellow hover:-translate-y-1 transition-all hard-shadow-sm">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- The Ponnangai Standard Section -->
+    <section class="py-section-gap px-margin-page bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-sunny-yellow z-0"></div>
+                    <div class="border-2 border-on-surface bg-pure-white p-8 relative z-10 hard-shadow">
+
+                        <h2
+                            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                            The Ponnangai Standard
+                        </h2>
+                        <div class="h-1 w-20 bg-primary mb-6"></div>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                            We don't just manufacture cleaning liquids; we engineer solutions for absolute hygiene. Our
+                            products are formulated with high-grade ingredients to cut through grease, grime, and dirt
+                            with industrial efficiency, leaving nothing behind but a brilliant shine.
+                        </p>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Built for both domestic perfectionists and commercial powerhouses, our range guarantees a
+                            spotless environment. No compromises. No residue. Just pure, energetic clean.
+                        </p>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary z-0"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-stack-md pt-12 md:pt-0 pl-0 md:pl-12">
+                    <!-- Feature Bento Box 1 -->
+                    <div
+                        class="bg-primary text-pure-white p-6 border-2 border-on-surface flex flex-col justify-between aspect-square transition-transform hover:-translate-y-2 hover:shadow-[4px_4px_0px_0px_#FFD700]">
+                        <span class="material-symbols-outlined text-5xl">diamond</span>
+                        <h3 class="font-headline-md text-headline-md text-xl mt-4">Unmatched Shine</h3>
+                    </div>
+                    <!-- Feature Bento Box 2 -->
+                    <div
+                        class="bg-pure-white text-on-surface p-6 border-2 border-on-surface flex flex-col justify-between aspect-square mt-8 transition-transform hover:-translate-y-2 hover:shadow-[4px_4px_0px_0px_#00696b]">
+                        <span class="material-symbols-outlined text-5xl text-secondary-container">water_drop</span>
+                        <h3 class="font-headline-md text-headline-md text-xl mt-4">Industrial Strength</h3>
+                    </div>
+                    <!-- Feature Bento Box 3 -->
+                    <div
+                        class="bg-sunny-yellow text-on-surface p-6 border-2 border-on-surface flex flex-col justify-between aspect-square -mt-8 transition-transform hover:-translate-y-2 hover:shadow-[4px_4px_0px_0px_#161d1d]">
+                        <span class="material-symbols-outlined text-5xl">eco</span>
+                        <h3 class="font-headline-md text-headline-md text-xl mt-4">Tough on Dirt</h3>
+                    </div>
+                    <!-- Feature Bento Box 4 -->
+                    <div
+                        class="bg-secondary text-pure-white p-6 border-2 border-on-surface flex flex-col justify-between aspect-square transition-transform hover:-translate-y-2 hover:shadow-[4px_4px_0px_0px_#FFD700]">
+                        <span class="material-symbols-outlined text-5xl">verified</span>
+                        <h3 class="font-headline-md text-headline-md text-xl mt-4">Quality Assured</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary w-full grid grid-cols-1 md:grid-cols-3 gap-stack-lg px-margin-page py-section-gap">
+        <div>
+            <span class="font-headline-md text-headline-md font-extrabold text-sunny-yellow block mb-stack-md">Ponnangai
+                Enterprises</span>
+            <p class="font-body-sm text-body-sm text-on-primary/80">© 2026 Ponnangai Enterprises. All rights reserved.
+            </p>
+            <p class="font-body-sm text-body-sm text-on-primary/80 max-w-xs mt-4">
+                <strong>Address:</strong><br>
+                Ponnangai Enterprises<br>
+                2, Muththamman Street, Muthuamman Nagar<br>Ayanavaram, Chennai - 600023<br>Tamil Nadu, India
+            </p>
+        </div>
+        <div class="flex flex-col gap-stack-sm">
+            <h4 class="font-label-bold text-label-bold text-pure-white mb-2 uppercase">Quick Links</h4>
+            <a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100"
+                href="about.html">Who We Are</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100"
+                href="contact.html">Get In Touch</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 hover:text-sunny-yellow transition-colors opacity-80 hover:opacity-100"
+                href="contact.html">Bulk Enquiry</a>
+        </div>
+        <div>
+            <p class="font-body-sm text-body-sm text-on-primary/80 mb-stack-sm">Connect with us for sparkling clean
+                solutions.</p>
+            <div class="flex gap-4">
+                <div class="w-10 h-10 bg-on-primary-fixed-variant rounded-full flex items-center justify-center border border-on-primary/30 hover:bg-sunny-yellow hover:text-deep-neutral transition-colors cursor-pointer text-on-primary  js-open-mail-popup cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+                <div class="w-10 h-10 bg-on-primary-fixed-variant rounded-full flex items-center justify-center border border-on-primary/30 hover:bg-sunny-yellow hover:text-deep-neutral transition-colors cursor-pointer text-on-primary  js-open-phone-popup cursor-pointer">
+<span class="material-symbols-outlined">call</span>
+</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    
+
+<!-- Mail Popup -->
+<div id="mail-popup" class="fixed inset-0 bg-deep-neutral/80 hidden z-[100] flex items-center justify-center p-margin-page opacity-0 transition-opacity duration-300">
+    <div class="bg-pure-white p-8 border-4 border-primary rounded max-w-sm w-full text-center hard-shadow transform scale-95 transition-transform duration-300">
+        <h3 class="font-headline-md text-2xl text-primary mb-4">Stay Connected to Us</h3>
+        <p class="font-body-lg text-on-surface-variant mb-6"><strong>Email:</strong> <a href="mailto:ponnangaienterprises2003@gmail.com" class="text-secondary hover:underline break-all">ponnangaienterprises2003@gmail.com</a></p>
+        <button data-href="contact.html" class="cursor-pointer w-full bg-sunny-yellow text-primary font-label-bold py-3 border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95">Go to Contact Page</button>
+        <button class="js-close-mail-popup mt-4 text-on-surface-variant underline font-label-bold text-sm">Close</button>
+    </div>
+</div>
+
+
+<!-- Phone Popup -->
+<div id="phone-popup" class="fixed inset-0 bg-deep-neutral/80 hidden z-[100] flex items-center justify-center p-margin-page opacity-0 transition-opacity duration-300">
+    <div class="bg-pure-white p-8 border-4 border-primary rounded max-w-sm w-full text-center hard-shadow transform scale-95 transition-transform duration-300">
+        <h3 class="font-headline-md text-2xl text-primary mb-4">Stay Connected to Us</h3>
+        <p class="font-body-lg text-on-surface-variant mb-6"><strong>Phone:</strong> <a href="tel:8610126937" class="text-secondary hover:underline">8610126937</a></p>
+        <button data-href="contact.html" class="cursor-pointer w-full bg-sunny-yellow text-primary font-label-bold py-3 border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95">Go to Contact Page</button>
+        <button class="js-close-phone-popup mt-4 text-on-surface-variant underline font-label-bold text-sm">Close</button>
+    </div>
+</div>
+
+<!-- Floating Action Button -->
+
+
+<!-- Floating Action Button -->
+<div id="fab-container" class="fixed bottom-6 right-6 z-50 flex items-center justify-end transition-all duration-300 opacity-0 pointer-events-none translate-y-10">
+   <div id="fab-bar" class="hidden bg-secondary text-pure-white border-2 border-primary p-4 shadow-[0_8px_0_0_#FFD700] rounded-xl flex-col sm:flex-row items-center gap-4 mr-4 transition-all duration-300">
+       <div class="flex items-center gap-4">
+           <span class="material-symbols-outlined text-[32px] material-filled">local_shipping</span>
+           <div>
+               <h4 class="font-label-bold text-label-bold text-left">Need Commercial Quantities?</h4>
+               <p class="font-body-sm text-body-sm opacity-90 text-left">Get special pricing on bulk orders.</p>
+           </div>
+       </div>
+       <button class="bg-sunny-yellow text-deep-neutral font-label-bold text-label-bold px-6 py-2 rounded border-2 border-deep-neutral hover:-translate-y-1 hover:shadow-lg transition-transform active:scale-95 whitespace-nowrap" data-href="contact.html">
+           Request Bulk Quote
+       </button>
+   </div>
+   <button class="js-toggle-fab-bar bg-sunny-yellow text-primary rounded-full w-14 h-14 flex items-center justify-center border-2 border-primary hard-shadow-sm hover:hard-shadow transition-all hover:-translate-y-1 active:scale-95 relative z-10 pointer-events-auto">
+      <span id="fab-icon" class="material-symbols-outlined transition-transform duration-300 text-[28px]">request_quote</span>
+   </button>
+</div>
+
+</body>
