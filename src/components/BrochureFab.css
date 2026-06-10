@@ -1,0 +1,22 @@
+.brochure-fab {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--deep-blue);
+  color: var(--bg-white);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  cursor: pointer;
+  border: 2px solid var(--primary-orange);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brochure-fab:hover {
+  box-shadow: 0 10px 25px rgba(14, 30, 80, 0.4);
+}

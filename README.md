@@ -8,23 +8,14 @@ Welcome to the official repository for the **Ponnangai Enterprises** website. Th
 
 ## 🌐 Project Overview
 
-This website serves as the digital storefront and informational hub for Ponnangai Enterprises. It is built to provide users with seamless navigation to learn about our business, explore our product catalog, and easily get in touch with us.
-
-### 📁 File Structure
-
-The project is structured with the following core components:
-* `index.html` — The main landing page of the website.
-* `products.html` — Catalog displaying our range of housekeeping products.
-* `about.html` — Insights into our company story, vision, and mission.
-* `gallery.html` — Visual showcase of our infrastructure and products.
-* `contact.html` — Contact forms and location details for business inquiries.
-* `/assets` — Directory containing styling, scripts, and imagery.
+This website serves as the digital storefront and informational hub for Ponnangai Enterprises. It is built to provide users with seamless navigation to learn about our business, explore our product catalog, and easily get in touch with us. The site has been upgraded to a modern Single Page Application (SPA) for a fast and dynamic user experience.
 
 ---
 
 ### 🛠️ Tech Stack
-* **Frontend:** HTML5, CSS3, JavaScript
-* **Hosting:** GitHub Pages
+* **Frontend:** React, Vite, JavaScript (JSX), Vanilla CSS
+* **Animations:** Framer Motion
+* **Icons:** Lucide React
 
 ---
 

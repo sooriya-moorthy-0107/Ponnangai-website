@@ -1,0 +1,83 @@
+.about-page {
+  padding-top: 80px;
+}
+
+.about-hero {
+  background-color: var(--deep-blue);
+  color: var(--text-light);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--bg-white);
+}
+
+.about-hero p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content {
+  padding: 6rem 0;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.05);
+}
+
+.story-text h2 {
+  font-size: 2.5rem;
+  color: var(--deep-blue);
+  margin-bottom: 1.5rem;
+}
+
+.story-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.heritage-section {
+  background-color: var(--bg-offwhite);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.heritage-logo {
+  max-width: 200px;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}

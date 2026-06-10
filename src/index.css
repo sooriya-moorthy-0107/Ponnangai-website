@@ -1,0 +1,211 @@
+:root {
+  /* Brand Colors */
+  --primary-orange: #FF6B00;
+  --primary-orange-hover: #E65C00;
+  --primary-orange-glow: rgba(255, 107, 0, 0.4);
+
+  --deep-blue: #0A192F;
+  --deep-blue-hover: #112240;
+  --deep-blue-glow: rgba(10, 25, 47, 0.4);
+
+  --accent-green: #2E7D32;
+
+  /* Neutrals & Backgrounds */
+  --bg-white: #FFFFFF;
+  --bg-offwhite: #F8F9FA;
+  --text-dark: #1A1D20;
+  --text-light: #F8F9FA;
+  --text-muted: #6C757D;
+  --border-color: #E9ECEF;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Utilities */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-orange: 0 10px 25px var(--primary-orange-glow);
+  --shadow-blue: 0 10px 25px var(--deep-blue-glow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-offwhite);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  border: none;
+  background: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Common Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-orange);
+  color: var(--text-light);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-orange-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-secondary {
+  background-color: var(--deep-blue);
+  color: var(--text-light);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover {
+  background-color: var(--deep-blue-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-blue);
+}
+
+.btn-outline {
+  border: 2px solid var(--deep-blue);
+  color: var(--deep-blue);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--deep-blue);
+  color: var(--text-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-blue);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .grid-cols-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3, .grid-cols-4, .grid-cols-2 { grid-template-columns: repeat(1, 1fr); }
+  .section { padding: 4rem 0; }
+  .section-title { font-size: 2rem; }
+}
+
+/* Card Micro-interactions */
+.product-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg), 0 20px 40px rgba(10, 25, 47, 0.1);
+  border-color: rgba(10, 25, 47, 0.1);
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
