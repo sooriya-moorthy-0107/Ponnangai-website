@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import BrochureFab from './components/BrochureFab';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <BrochureFab />
     </div>
   );
 }

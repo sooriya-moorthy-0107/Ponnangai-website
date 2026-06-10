@@ -81,21 +81,15 @@
   border: 1px solid var(--border-color);
 }
 
-.form-group {
+/* Form Floating Labels */
+.floating-group {
+  position: relative;
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--deep-blue);
-  margin-bottom: 0.5rem;
-}
-
-.form-control {
+.floating-group .form-control {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
@@ -105,27 +99,110 @@
   background: var(--bg-offwhite);
 }
 
-.form-control:focus {
+.floating-group .form-control:focus {
   outline: none;
   border-color: var(--primary-orange);
   box-shadow: 0 0 0 3px var(--primary-orange-glow);
   background: var(--bg-white);
 }
 
-textarea.form-control {
-  resize: vertical;
-  min-height: 120px;
+.floating-group .floating-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  font-size: 1rem;
 }
 
-.map-section {
-  height: 400px;
-  width: 100%;
-  background: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
+.floating-group textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.floating-group textarea.form-control ~ .floating-label {
+  top: 1.5rem; /* Align differently for textarea */
+}
+
+.floating-group .form-control:focus ~ .floating-label,
+.floating-group .form-control:not(:placeholder-shown) ~ .floating-label {
+  top: 0.5rem;
+  transform: translateY(0) scale(0.85);
+  transform-origin: left top;
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+/* Maps Section Styles */
+.maps-section {
+  padding: 4rem 0;
+  background-color: var(--bg-white);
+}
+
+.maps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.map-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.map-card h3 {
+  padding: 1.5rem;
+  margin: 0;
   font-size: 1.25rem;
+  color: var(--deep-blue);
+  background-color: var(--bg-offwhite);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Map Drawer Slide Down on Hover */
+.map-drawer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: var(--bg-offwhite);
+  padding: 0 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  color: var(--deep-blue);
+  font-weight: 500;
+}
+
+.map-card:hover .map-drawer {
+  max-height: 150px;
+  opacity: 1;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
 }
 
 @media (max-width: 1024px) {

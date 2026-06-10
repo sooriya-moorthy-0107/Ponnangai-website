@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Sparkles, ShieldCheck, Droplets } from 'lucide-react';
+import HeroCarousel from '../components/HeroCarousel';
 import './Home.css';
 
 const Home = () => {
@@ -67,30 +68,7 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div 
-              className="hero-carousel"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)', position: 'relative' }}>
-                <motion.img 
-                  src="/assets/products/S_Toiletcleaner.png" 
-                  alt="Premium Toilet Cleaner"
-                  style={{ height: '300px', objectFit: 'contain' }}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <div style={{
-                  position: 'absolute', bottom: '-20px', right: '-20px', 
-                  background: 'var(--bg-white)', padding: '1rem', 
-                  borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)'
-                }}>
-                  <div style={{ color: 'var(--primary-orange)', fontWeight: 'bold' }}>Top Seller</div>
-                  <div style={{ color: 'var(--deep-blue)' }}>Premium Surface Cleaner</div>
-                </div>
-              </div>
-            </motion.div>
+            <HeroCarousel />
           </div>
         </div>
       </section>
