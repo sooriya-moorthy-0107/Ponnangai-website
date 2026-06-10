@@ -1,0 +1,136 @@
+.contact-page {
+  padding-top: 80px;
+  background-color: var(--bg-white);
+  min-height: 100vh;
+}
+
+.contact-header {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: var(--bg-offwhite);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem 0;
+}
+
+.contact-info-card {
+  background: var(--deep-blue);
+  color: var(--text-light);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.contact-info-card h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  background: rgba(255, 255, 255, 0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-orange);
+  flex-shrink: 0;
+}
+
+.contact-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--bg-white);
+}
+
+.contact-text p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form {
+  background: var(--bg-white);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: var(--bg-offwhite);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px var(--primary-orange-glow);
+  background: var(--bg-white);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.map-section {
+  height: 400px;
+  width: 100%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
