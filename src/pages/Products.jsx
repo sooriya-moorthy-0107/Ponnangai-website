@@ -16,7 +16,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Clothwash.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Clothwash.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Clothwash.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Clothwash.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Clothwash.png', label: 'Combo Pack' }
     ]
   },
@@ -29,7 +29,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Comfort_blue.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Comfort_blue.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Comfort_blue.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Comfort_blue.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Comfort_blue.png', label: 'Combo Pack' }
     ]
   },
@@ -42,7 +42,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Comfort_pink.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Comfort_pink.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Comfort_pink.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Comfort_pink.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Comfort_pink.png', label: 'Combo Pack' }
     ]
   },
@@ -55,7 +55,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Dishwash.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Dishwash.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Dishwash.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Dishwash.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Dishwash.png', label: 'Combo Pack' }
     ]
   },
@@ -68,11 +68,11 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Floorwash_pink.png', label: 'Pink Standard Retail' },
       { src: '/assets/products/5L_Floowcelaner_pink.png', label: 'Pink 5L Can' },
-      { src: '/assets/products/WOS_Floorwash_pink.png', label: 'Pink Without Sticker' },
+      { src: '/assets/products/WOS_Floorwash_pink.png', label: 'Pink Refill Pack' },
       { src: '/assets/products/C_Floorwash_pink.png', label: 'Pink Combo Pack' },
       { src: '/assets/products/S_Floorwash_yellow.png', label: 'Yellow Standard Retail' },
       { src: '/assets/products/5L_Floorcleaner_yellow.png', label: 'Yellow 5L Can' },
-      { src: '/assets/products/WOS_Floorwash_yellow.png', label: 'Yellow Without Sticker' },
+      { src: '/assets/products/WOS_Floorwash_yellow.png', label: 'Yellow Refill Pack' },
       { src: '/assets/products/C_Floorwash_yellow.png', label: 'Yellow Combo Pack' }
     ]
   },
@@ -97,7 +97,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Toiletcleaner.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Toiletcleaner.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Toiletcleaner.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Toiletcleaner.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Toilercleaner.png', label: 'Combo Pack' }
     ]
   },
@@ -110,7 +110,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Glasscleaner.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Glasscleaner.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Glasscleaner.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Glasscleaner.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Glasscleaner.png', label: 'Combo Pack' }
     ]
   },
@@ -123,7 +123,7 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Tilescleaner.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Tilescleaner.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Tilescleaner.png', label: 'Without Sticker' },
+      { src: '/assets/products/WOS_Tilescleaner.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Tilescleaner.png', label: 'Combo Pack' }
     ]
   },

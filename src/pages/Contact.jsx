@@ -61,7 +61,7 @@ const Contact = () => {
             <div className="contact-detail">
               <div className="contact-icon"><MapPin size={24} /></div>
               <div className="contact-text">
-                <h4>Our Headquarters</h4>
+                <h4>Manufacturing Unit</h4>
                 <p>2/1 Muthuamman Kovil Street,<br/>Thandhai Periyar Nagar, Aynavaram,<br/>Chennai - 600023</p>
               </div>
             </div>
