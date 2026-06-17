@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const About = () => {
@@ -10,6 +11,11 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <Helmet>
+        <title>About Us | Ponnangai Enterprises</title>
+        <meta name="description" content="Learn about Ponnangai Enterprises, a leading manufacturer of high-performance cleaning solutions, housekeeping equipment, and bulk facility products." />
+      </Helmet>
+
       <section className="about-hero">
         <div className="container">
           <motion.h1 
@@ -17,7 +23,7 @@ const About = () => {
             animate="visible" 
             variants={fadeInUp}
           >
-            Who We Are
+            About Ponnangai Enterprises
           </motion.h1>
           <motion.p 
             initial="hidden" 
@@ -39,12 +45,12 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <h2>Our Story</h2>
+            <h2>Our Story in Cleaning Supplies</h2>
             <p>
-              Founded with a vision to revolutionize the housekeeping and hygiene industry, Ponnangai Enterprises has consistently delivered high-performance, industrial-grade cleaning solutions.
+              Founded with a vision to revolutionize the housekeeping and hygiene industry, Ponnangai Enterprises has consistently delivered high-performance, industrial-grade cleaning solutions and housekeeping equipment.
             </p>
             <p>
-              We believe in the power of a pristine environment. Whether it’s a bustling commercial space or a cozy home, our products ensure a brilliant shine and a loveable freshness.
+              We believe in the power of a pristine environment. Whether it’s a bustling commercial space needing bulk facility products or a cozy home, our products ensure a brilliant shine and a loveable freshness.
             </p>
           </motion.div>
           <motion.div 
@@ -54,7 +60,7 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <img src="/assets/products/professional.png" alt="Our Facility" />
+            <img src="/assets/products/professional.png" alt="Ponnangai Enterprises cleaning products facility" />
           </motion.div>
         </div>
       </section>
@@ -77,12 +83,12 @@ const About = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            Decades of trust, vibrant fragrances, and unmatched quality.
+            Decades of trust, vibrant fragrances, and unmatched quality in manufacturing.
           </motion.p>
           
           <motion.img 
             src="/assets/logo.png" 
-            alt="Ponnangai Traditional Logo" 
+            alt="Ponnangai Enterprises brand logo" 
             className="heritage-logo"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

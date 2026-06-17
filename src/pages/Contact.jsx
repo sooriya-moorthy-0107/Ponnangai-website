@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { toast } from 'sonner';
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const Contact = () => {
@@ -27,6 +28,11 @@ const Contact = () => {
   };
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact Us | Ponnangai Enterprises</title>
+        <meta name="description" content="Get in touch with Ponnangai Enterprises for inquiries about our bulk housekeeping products, cleaning liquids, and enterprise solutions. We are located in Chennai." />
+      </Helmet>
+
       <section className="contact-header">
         <div className="container">
           <motion.h1 

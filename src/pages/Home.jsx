@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Sparkles, ShieldCheck, Droplets } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import HeroCarousel from '../components/HeroCarousel';
 import './Home.css';
 
@@ -23,6 +24,11 @@ const Home = () => {
 
   return (
     <div className="home-page">
+      <Helmet>
+        <title>Ponnangai Enterprises | Premium Housekeeping Products</title>
+        <meta name="description" content="Manufacturer of high-quality housekeeping products and cleaning supplies. View our catalog for bulk orders and enterprise solutions." />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-background">
@@ -56,7 +62,7 @@ const Home = () => {
                 Bring <span>Brilliant Cleanliness</span> to Your Space
               </motion.h1>
               <motion.p variants={fadeInUp}>
-                High-performance, industrial-grade cleaning solutions engineered for absolute hygiene and radiant results. Experience the loveable freshness.
+                High-performance, industrial-grade cleaning solutions and housekeeping equipment engineered for absolute hygiene and radiant results. Experience the loveable freshness.
               </motion.p>
               <motion.div variants={fadeInUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/products" className="btn btn-primary">
@@ -83,7 +89,7 @@ const Home = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            The Ponnangai Standard
+            The Ponnangai Standard in Cleaning Supplies
           </motion.h2>
           <motion.p 
             className="section-subtitle"
@@ -92,7 +98,7 @@ const Home = () => {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            We don't just manufacture cleaning liquids; we engineer solutions for absolute hygiene.
+            We don't just manufacture cleaning liquids; we engineer solutions for absolute hygiene and bulk facility products.
           </motion.p>
 
           <motion.div 
@@ -127,3 +133,4 @@ const Home = () => {
 };
 
 export default Home;
+

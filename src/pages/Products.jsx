@@ -4,6 +4,7 @@ import { Info, ShoppingCart } from 'lucide-react';
 import { toast } from 'sonner';
 import Modal from '../components/ui/Modal';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Products.css';
 
 const productsData = [
@@ -123,7 +124,6 @@ const productsData = [
     variants: [
       { src: '/assets/products/S_Tilescleaner.png', label: 'Standard Retail' },
       { src: '/assets/products/5L_Tilescleaner.png', label: '5L Can' },
-      { src: '/assets/products/WOS_Tilescleaner.png', label: 'Refill Pack' },
       { src: '/assets/products/C_Tilescleaner.png', label: 'Combo Pack' }
     ]
   },
@@ -270,6 +270,11 @@ const Products = () => {
 
   return (
     <div className="products-page">
+      <Helmet>
+        <title>Our Products | Ponnangai Enterprises</title>
+        <meta name="description" content="Browse our catalog of premium housekeeping products, cleaning liquids, and bulk facility supplies. High-performance solutions for domestic and commercial use." />
+      </Helmet>
+
       <div className="container">
         <header className="products-header">
           <motion.h1 
