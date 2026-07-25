@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Sparkles, MessageSquare, Move } from 'lucide-react';
 import { toast } from 'sonner';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
@@ -20,172 +20,201 @@ const Contact = () => {
   const handleEnquire = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.message) {
-      toast.error('Please fill in your Name, Phone, and Message.');
+      toast.error('Please fill in your Name, Phone Number, and Message.');
       return;
     }
-    const text = `Hi, I have an inquiry.%0A%0AMessage: ${formData.message}%0A%0AMy Name: ${formData.name}%0AEmail: ${formData.email || 'N/A'}%0APhone: ${formData.phone}`;
+    const text = `Hi Ponnangai Enterprises,%0A%0AMessage: ${encodeURIComponent(formData.message)}%0A%0AMy Name: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email || 'N/A')}%0APhone: ${encodeURIComponent(formData.phone)}`;
     window.open(`https://wa.me/917092148969?text=${text}`, '_blank');
   };
+
   return (
     <div className="contact-page">
       <Helmet>
         <title>Contact Us | Ponnangai Enterprises</title>
-        <meta name="description" content="Get in touch with Ponnangai Enterprises for inquiries about our bulk housekeeping products, cleaning liquids, and enterprise solutions. We are located in Chennai." />
+        <meta name="description" content="Get in touch with Ponnangai Enterprises for inquiries about bulk housekeeping products, cleaning liquids, and enterprise supply." />
       </Helmet>
 
-      <section className="contact-header">
+      {/* Header Banner */}
+      <section className="contact-hero">
         <div className="container">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            style={{ fontSize: '3rem', color: 'var(--deep-blue)', marginBottom: '1rem' }}
+            className="text-center"
           >
-            Get in Touch
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}
-          >
-            Whether you have a question about our products, pricing, or anything else, our team is ready to answer all your questions.
-          </motion.p>
+            <span className="badge-orange mb-2"><Sparkles size={14} /> We'd Love to Hear From You</span>
+            <h1 className="section-title text-center">Get In <span>Touch With Us</span></h1>
+            <p className="section-subtitle text-center">
+              Have questions about our products, bulk pricing, or custom orders? Reach out to our sales & support team. Touch & drag any card to interact!
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="container">
+      {/* Contact Grid Section */}
+      <section className="container contact-content-section">
         <div className="contact-grid">
+          {/* Info Card with Drag Gesture */}
           <motion.div 
-            className="contact-info-card"
-            initial={{ opacity: 0, x: -50 }}
+            className="contact-info-card glass-card-dark text-center"
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            dragElastic={0.15}
+            whileGrab={{ cursor: 'grabbing', scale: 1.02 }}
           >
-            <h2>Contact Information</h2>
-            
-            <div className="contact-detail">
-              <div className="contact-icon"><MapPin size={24} /></div>
-              <div className="contact-text">
-                <h4>Manufacturing Unit</h4>
-                <p>2/1 Muthuamman Kovil Street,<br/>Thandhai Periyar Nagar, Aynavaram,<br/>Chennai - 600023</p>
+            <div className="drag-indicator-bar">
+              <Move size={14} /> Drag Card
+            </div>
+
+            <div className="info-header text-center">
+              <span className="badge-orange mx-auto">Direct Contact</span>
+              <h2 className="text-center">Ponnangai Enterprises</h2>
+              <p className="text-center">Reach out directly for corporate partnerships and bulk supplies.</p>
+            </div>
+
+            <div className="contact-details-list">
+              <div className="contact-detail-item centered-item">
+                <div className="detail-icon"><MapPin size={22} /></div>
+                <div className="text-center">
+                  <h4>Manufacturing Unit</h4>
+                  <p>2/1 Muthuamman Kovil Street,<br />Thandhai Periyar Nagar, Aynavaram,<br />Chennai - 600023, Tamil Nadu</p>
+                </div>
+              </div>
+
+              <div className="contact-detail-item centered-item">
+                <div className="detail-icon"><Phone size={22} /></div>
+                <div className="text-center">
+                  <h4>Call Us</h4>
+                  <p>+91 7092148969<br />+91 9360249450</p>
+                </div>
+              </div>
+
+              <div className="contact-detail-item centered-item">
+                <div className="detail-icon"><Mail size={22} /></div>
+                <div className="text-center">
+                  <h4>Email Us</h4>
+                  <p>ponnangaienterprises12@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="contact-detail-item centered-item">
+                <div className="detail-icon"><Clock size={22} /></div>
+                <div className="text-center">
+                  <h4>Business Hours</h4>
+                  <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
+                </div>
               </div>
             </div>
 
-            <div className="contact-detail">
-              <div className="contact-icon"><Phone size={24} /></div>
-              <div className="contact-text">
-                <h4>Call Us</h4>
-                <p>+91 7092148969<br />+91 9360249450</p>
+            <div className="quick-whatsapp-box centered-box">
+              <MessageSquare size={24} className="wa-icon" />
+              <div className="text-center">
+                <h5>Instant WhatsApp Support</h5>
+                <p>Chat directly with our representative</p>
               </div>
-            </div>
-
-            <div className="contact-detail">
-              <div className="contact-icon"><Mail size={24} /></div>
-              <div className="contact-text">
-                <h4>Email Us</h4>
-                <p>ponnangaienterprises12@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <div className="contact-icon"><Clock size={24} /></div>
-              <div className="contact-text">
-                <h4>Business Hours</h4>
-                <p>Monday - Saturday<br />10:00 AM - 7:00 PM</p>
-              </div>
+              <a 
+                href="https://wa.me/917092148969" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary btn-sm"
+              >
+                Chat Now
+              </a>
             </div>
           </motion.div>
 
+          {/* Form Card with Drag Gesture & Redesigned Centered Button */}
           <motion.div 
-            className="contact-form"
-            initial={{ opacity: 0, x: 50 }}
+            className="contact-form-card glass-panel text-center"
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
+            drag
+            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            dragElastic={0.15}
+            whileGrab={{ cursor: 'grabbing', scale: 1.02 }}
           >
-            <h3 style={{ fontSize: '1.8rem', color: 'var(--deep-blue)', marginBottom: '2rem' }}>Send us a Message</h3>
-            <form onSubmit={handleEnquire}>
-              <div className="form-group floating-group">
-                <input type="text" id="name" className="form-control" placeholder=" " value={formData.name} onChange={handleChange} required />
-                <label htmlFor="name" className="floating-label">Full Name</label>
+            <div className="drag-indicator-bar-dark">
+              <Move size={14} /> Drag Form Card
+            </div>
+
+            <h3 className="text-center">Send Us a Message</h3>
+            <p className="form-subtext text-center">Fill in the details below to launch a direct WhatsApp query to our team.</p>
+
+            <form onSubmit={handleEnquire} className="contact-form">
+              <div className="form-group text-center">
+                <label htmlFor="name" className="text-center">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  placeholder="Enter your name" 
+                  className="text-center"
+                  required 
+                />
               </div>
-              <div className="form-group floating-group">
-                <input type="email" id="email" className="form-control" placeholder=" " value={formData.email} onChange={handleChange} required />
-                <label htmlFor="email" className="floating-label">Email Address</label>
+
+              <div className="form-grid-2">
+                <div className="form-group text-center">
+                  <label htmlFor="phone" className="text-center">Phone / WhatsApp *</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    value={formData.phone} 
+                    onChange={handleChange} 
+                    placeholder="Enter phone number" 
+                    className="text-center"
+                    required 
+                  />
+                </div>
+
+                <div className="form-group text-center">
+                  <label htmlFor="email" className="text-center">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    placeholder="Enter email address" 
+                    className="text-center"
+                  />
+                </div>
               </div>
-              <div className="form-group floating-group">
-                <input type="tel" id="phone" className="form-control" placeholder=" " value={formData.phone} onChange={handleChange} required />
-                <label htmlFor="phone" className="floating-label">Phone Number</label>
+
+              <div className="form-group text-center">
+                <label htmlFor="message" className="text-center">Your Inquiry Message *</label>
+                <textarea 
+                  id="message" 
+                  rows="4" 
+                  value={formData.message} 
+                  onChange={handleChange} 
+                  placeholder="Tell us what cleaning products or bulk quantities you need..." 
+                  className="text-center"
+                  required 
+                />
               </div>
-              <div className="form-group floating-group">
-                <textarea id="message" className="form-control" placeholder=" " value={formData.message} onChange={handleChange} required></textarea>
-                <label htmlFor="message" className="floating-label">Your Message</label>
+
+              {/* Redesigned Glowing Centered Contact Button */}
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+                <motion.button 
+                  type="submit" 
+                  className="btn-contact-submit"
+                  whileHover={{ scale: 1.06, boxShadow: "0 18px 40px rgba(255, 109, 0, 0.45)" }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="btn-icon-circle">
+                    <Send size={18} />
+                  </div>
+                  <span>Send Inquiry via WhatsApp</span>
+                </motion.button>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>
-                Enquire Now
-              </button>
             </form>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Maps Section */}
-      <section className="maps-section">
-        <div className="container">
-          <div className="maps-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--deep-blue)', marginBottom: '1rem' }}>Our Locations</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Visit our factory or shops directly</p>
-          </div>
-          
-          <div className="maps-grid">
-            <motion.div 
-              className="map-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3>Factory Location</h3>
-              <div className="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.5463000194704!2d80.22639199999999!3d13.0949757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526568484c588b%3A0x8b9af24eeba25f34!2sPonnangai%20Enterprises!5e1!3m2!1sen!2sin!4v1779780088532!5m2!1sen!2sin" width="100%" height="300" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div className="map-drawer">
-                <p>2/1 Muthuamman Kovil Street, Thandhai Periyar Nagar, Aynavaram, Chennai - 600023</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="map-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h3>Aminjikarai</h3>
-              <div className="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8823583775816!2d80.2249581!3d13.073878100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267003344574d%3A0x282f2b4387c73d04!2sPonnangai%20enterprises%20factory%20outlet!5e1!3m2!1sen!2sin!4v1781088926886!5m2!1sen!2sin" width="100%" height="300" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div className="map-drawer">
-                <p>G2, 531/307, Poonamallee High Rd, Aminjikarai, Chennai, Tamil Nadu 600030</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="map-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <h3>Kolathur</h3>
-              <div className="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.1594452789313!2d80.205719!3d13.119220999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52650073790e73%3A0x56f7228a1edfa458!2sPonnangai%20enterprises!5e1!3m2!1sen!2sin!4v1781088964840!5m2!1sen!2sin" width="100%" height="300" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div className="map-drawer">
-                <p>Plot No-49, 2nd Main Rd, Baba Nagar, Srinivasa Nagar, Kolathur, Chennai, Tamil Nadu 600099</p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
     </div>
