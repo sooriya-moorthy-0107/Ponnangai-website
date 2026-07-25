@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Phone, MapPin, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import Modal from './ui/Modal';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,11 +12,11 @@ const Footer = () => {
   const handleIconClick = (e, type) => {
     e.preventDefault();
     if (type === 'mail') {
-      setPopupInfo({ title: 'Email Us', content: 'ponnangaienterprises12@gmail.com' });
+      setPopupInfo({ title: 'Email Us Directly', content: 'ponnangaienterprises12@gmail.com' });
     } else if (type === 'phone') {
-      setPopupInfo({ title: 'Call Us', content: '7092148969, 9360249450' });
+      setPopupInfo({ title: 'Call Our Sales Office', content: '+91 7092148969 / +91 9360249450' });
     } else if (type === 'map') {
-      setPopupInfo({ title: 'Visit Us', content: '2, Muththamman Street, Muthuamman Nagar, Ayanavaram, Chennai - 600023, Tamil Nadu' });
+      setPopupInfo({ title: 'Manufacturing Location', content: '2, Muththamman Street, Muthuamman Nagar, Ayanavaram, Chennai - 600023, Tamil Nadu' });
     }
   };
 
@@ -24,78 +26,103 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer" style={{ position: 'relative' }}>
-      {/* Popup Modal */}
+    <footer className="footer">
+      {/* Quick Modal Popup */}
       {popupInfo && (
-        <div className="footer-modal-overlay" onClick={() => setPopupInfo(null)}>
-          <div className="footer-modal" onClick={e => e.stopPropagation()}>
-            <button className="footer-modal-close" onClick={() => setPopupInfo(null)}>
-              <X size={20} />
-            </button>
-            <h4 style={{ color: 'var(--deep-blue)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{popupInfo.title}</h4>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: '1.5' }}>{popupInfo.content}</p>
-            <button className="btn btn-primary" onClick={handleContactUs} style={{ width: '100%' }}>
-              Contact Us
+        <Modal 
+          isOpen={!!popupInfo} 
+          onClose={() => setPopupInfo(null)}
+          title={popupInfo.title}
+        >
+          <div className="footer-popup-content">
+            <p>{popupInfo.content}</p>
+            <button className="btn btn-primary w-full" onClick={handleContactUs}>
+              Contact Us Now
             </button>
           </div>
-        </div>
+        </Modal>
       )}
 
       <div className="container footer-grid">
         <div className="footer-brand">
-          <h3>Ponnangai Enterprises</h3>
-          <p>
-            High-performance, industrial-grade cleaning solutions engineered for absolute hygiene and radiant results.
+          <div className="footer-logo">
+            <img src="/assets/logo.png" alt="Ponnangai Logo" />
+            <span>Ponnangai Enterprises</span>
+          </div>
+          <p className="brand-tagline">
+            High-performance, industrial-grade cleaning solutions engineered for absolute hygiene, radiant shine, and lasting freshness.
           </p>
           <div className="footer-socials">
-            <a href="#" className="social-icon" onClick={(e) => handleIconClick(e, 'mail')}>
-              <Mail size={20} />
-            </a>
-            <a href="#" className="social-icon" onClick={(e) => handleIconClick(e, 'phone')}>
-              <Phone size={20} />
-            </a>
-            <a href="#" className="social-icon" onClick={(e) => handleIconClick(e, 'map')}>
-              <MapPin size={20} />
-            </a>
+            <motion.a 
+              href="#" 
+              className="social-icon" 
+              onClick={(e) => handleIconClick(e, 'mail')}
+              whileHover={{ scale: 1.15, backgroundColor: "var(--primary-orange)" }}
+              whileTap={{ scale: 0.9 }}
+              title="Email Us"
+            >
+              <Mail size={18} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="social-icon" 
+              onClick={(e) => handleIconClick(e, 'phone')}
+              whileHover={{ scale: 1.15, backgroundColor: "var(--primary-orange)" }}
+              whileTap={{ scale: 0.9 }}
+              title="Call Us"
+            >
+              <Phone size={18} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="social-icon" 
+              onClick={(e) => handleIconClick(e, 'map')}
+              whileHover={{ scale: 1.15, backgroundColor: "var(--primary-orange)" }}
+              whileTap={{ scale: 0.9 }}
+              title="Location"
+            >
+              <MapPin size={18} />
+            </motion.a>
           </div>
         </div>
 
         <div className="footer-links">
-          <h4>Quick Links</h4>
+          <h4>Navigation</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">Who We Are</Link></li>
-            <li><Link to="/products">Our Products</Link></li>
+            <li><Link to="/">Home Page</Link></li>
+            <li><Link to="/about">About Our Heritage</Link></li>
+            <li><Link to="/products">Product Catalog</Link></li>
             <li><Link to="/contact">Get In Touch</Link></li>
           </ul>
         </div>
 
-        <div className="footer-links">
-          <h4>Contact Us</h4>
-          <ul>
-            <li 
-              style={{ display: 'flex', gap: '8px', color: 'rgba(255,255,255,0.7)', cursor: 'pointer' }}
-              onClick={(e) => handleIconClick(e, 'map')}
-            >
-              <MapPin size={20} style={{ flexShrink: 0 }} />
+        <div className="footer-contact-col">
+          <h4>Headquarters</h4>
+          <ul className="footer-contact-list">
+            <li onClick={(e) => handleIconClick(e, 'map')}>
+              <MapPin size={20} className="icon-orange" />
               <span>
-                2, Muththamman Street,<br/>
-                Muthuamman Nagar, Ayanavaram,<br/>
+                2/1 Muthuamman Kovil St, Aynavaram,<br />
                 Chennai - 600023, Tamil Nadu
               </span>
             </li>
-            <li 
-              style={{ display: 'flex', gap: '8px', color: 'rgba(255,255,255,0.7)', marginTop: '8px', cursor: 'pointer' }}
-              onClick={(e) => handleIconClick(e, 'phone')}
-            >
-              <Phone size={20} style={{ flexShrink: 0 }} />
-              <span>7092148969<br/>9360249450</span>
+            <li onClick={(e) => handleIconClick(e, 'phone')}>
+              <Phone size={20} className="icon-orange" />
+              <span>+91 7092148969 / 9360249450</span>
+            </li>
+            <li onClick={(e) => handleIconClick(e, 'mail')}>
+              <Mail size={20} className="icon-orange" />
+              <span>ponnangaienterprises12@gmail.com</span>
             </li>
           </ul>
         </div>
       </div>
+
       <div className="footer-bottom">
-        <p>© 2026 Ponnangai Enterprises. All rights reserved.</p>
+        <div className="container footer-bottom-flex">
+          <p>© 2026 Ponnangai Enterprises. All rights reserved.</p>
+          <span className="footer-badge"><Sparkles size={12} /> Crafted for Superior Cleanliness</span>
+        </div>
       </div>
     </footer>
   );

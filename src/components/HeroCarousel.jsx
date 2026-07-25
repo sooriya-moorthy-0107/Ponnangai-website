@@ -1,89 +1,213 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Sparkles, ArrowRight, Pause, Play, Move } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const carouselItems = [
-  { src: '/assets/products/S_Clothwash.png', title: 'Premium Clothwash', desc: 'Tough on stains, gentle on clothes' },
-  { src: '/assets/products/S_Comfort_blue.png', title: 'Premium Fabric Conditioner (Blue)', desc: 'Long-lasting morning freshness' },
-  { src: '/assets/products/S_Comfort_pink.png', title: 'Premium Fabric Conditioner (Pink)', desc: 'Floral freshness for all fabrics' },
-  { src: '/assets/products/S_Dishwash.png', title: 'Power Dishwash Liquid', desc: 'Cuts through tough grease instantly' },
-  { src: '/assets/products/S_Floorwash_pink.png', title: 'Floral Floor Wash', desc: 'Kills 99.9% germs with a floral scent' },
-  { src: '/assets/products/S_Floorwash_yellow.png', title: 'Citrus Floor Wash', desc: 'Refreshing lemon fragrance & shine' },
-  { src: '/assets/products/S_Toiletcleaner.png', title: 'Advanced Toilet Cleaner', desc: '10x stain removal power' },
-  { src: '/assets/products/S_Handwash_green.png', title: 'Green Apple Handwash', desc: 'Natural protection for hands' },
-  { src: '/assets/products/S_Handwash_pink.png', title: 'Rose Handwash', desc: 'Moisturizing with a rosy scent' },
-  { src: '/assets/products/S_Handwash_yellow.png', title: 'Lemon Handwash', desc: 'Zesty lemon for complete hygiene' },
-  { src: '/assets/products/S_Glasscleaner.png', title: 'Premium Glass cleaner', desc: 'Streak-free shine for all glass surfaces' },
-  { src: '/assets/products/S_Tilescleaner.png', title: 'Premium Tiles cleaner', desc: 'Removes tough stains and grime from tiles' },
-  { src: '/assets/products/S_Phenyol.png', title: 'Premium Phenyol', desc: 'Floor sanitizer' }
+  { id: 1, src: '/assets/products/S_Clothwash.png', title: 'Premium Clothwash', tag: 'High-Performance', desc: 'Tough on stains, ultra gentle on premium fabrics' },
+  { id: 2, src: '/assets/products/S_Comfort_blue.png', title: 'Fabric Softener (Blue)', tag: 'Fresh Scent', desc: 'Long-lasting morning fragrance for soft garments' },
+  { id: 3, src: '/assets/products/S_Comfort_pink.png', title: 'Fabric Softener (Pink)', tag: 'Floral Bloom', desc: 'Lush floral freshness engineered for all garments' },
+  { id: 4, src: '/assets/products/S_Dishwash.png', title: 'Power Dishwash Gel', tag: 'Instant Grease-Cut', desc: 'Removes stubborn oil & residue in seconds' },
+  { id: 5, src: '/assets/products/S_Floorwash_pink.png', title: 'Floral Floor Cleaner', tag: '99.9% Protection', desc: 'Germ-free cleanliness with a rich fragrance' },
+  { id: 6, src: '/assets/products/S_Floorwash_yellow.png', title: 'Citrus Floor Cleaner', tag: 'Radiant Shine', desc: 'Refreshing zesty lemon aroma & streak-free shine' },
+  { id: 7, src: '/assets/products/S_Toiletcleaner.png', title: 'Advanced Toilet Cleaner', tag: '10x Power', desc: 'Maximum stain removal with protective barrier' },
+  { id: 8, src: '/assets/products/S_Handwash_green.png', title: 'Green Apple Handwash', tag: 'Skin Safe', desc: 'Anti-bacterial formula with moisturizing vitamins' },
+  { id: 9, src: '/assets/products/S_Handwash_pink.png', title: 'Rose Velvet Handwash', tag: 'Soft Touch', desc: 'Delicate rose aroma with deep hydration' },
+  { id: 10, src: '/assets/products/S_Handwash_yellow.png', title: 'Zesty Lemon Handwash', tag: 'Deep Clean', desc: 'Protects hands while washing away everyday bacteria' },
+  { id: 11, src: '/assets/products/S_Glasscleaner.png', title: 'Crystal Glass Cleaner', tag: 'Streak-Free', desc: 'Mirror finish clarity for glass & windows' },
+  { id: 12, src: '/assets/products/S_Tilescleaner.png', title: 'Heavy-Duty Tile Cleaner', tag: 'Deep Clean', desc: 'Restores tile grout & eliminates hard stains' },
+  { id: 13, src: '/assets/products/S_Phenyol.png', title: 'Sanitizing Phenyol', tag: 'Industrial Grade', desc: 'Comprehensive floor disinfectant & deodorizer' }
 ];
 
 const HeroCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [direction, setDirection] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    }, 4000); 
+      handleNext();
+    }, 3800); 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, isPaused]);
+
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
+  };
+
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x < -40) {
+      handleNext();
+    } else if (info.offset.x > 40) {
+      handlePrev();
+    }
+  };
+
+  const currentItem = carouselItems[currentIndex];
 
   const slideVariants = {
-    enter: { x: 150, opacity: 0, scale: 0.8, zIndex: 0 },
-    center: { x: 0, opacity: 1, scale: 1, zIndex: 1 },
-    exit: { x: -150, opacity: 0, scale: 0.8, zIndex: 0 }
+    enter: (dir) => ({
+      x: dir > 0 ? 140 : -140,
+      opacity: 0,
+      scale: 0.82,
+      rotateY: dir > 0 ? 20 : -20
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      rotateY: 0,
+      transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] }
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -140 : 140,
+      opacity: 0,
+      scale: 0.82,
+      rotateY: dir > 0 ? -20 : 20,
+      transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] }
+    })
   };
 
   return (
     <motion.div 
-      className="hero-carousel"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
+      className="hero-carousel-container"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)', position: 'relative', minHeight: '480px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        
-        <div style={{ position: 'relative', width: '100%', height: '320px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <AnimatePresence mode="popLayout">
+      <div className="carousel-card glass-panel">
+        {/* Glow ambient halo */}
+        <div className="carousel-glow-bg" />
+
+        {/* Top Bar */}
+        <div className="carousel-top-bar">
+          <span className="badge-orange">
+            <Sparkles size={14} />
+            {currentItem.tag}
+          </span>
+
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <span className="drag-hint-badge">
+              <Move size={12} /> Drag to Swipe
+            </span>
+            <button 
+              className="pause-toggle-btn"
+              onClick={() => setIsPaused(!isPaused)}
+              title={isPaused ? "Resume Autoplay" : "Pause Autoplay"}
+            >
+              {isPaused ? <Play size={14} /> : <Pause size={14} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Floating Product Image with Drag & Auto-play */}
+        <div className="carousel-stage">
+          <AnimatePresence custom={direction} mode="popLayout">
             <motion.div
               key={currentIndex}
+              custom={direction}
               variants={slideVariants}
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              style={{ position: 'absolute', display: 'flex', justifyContent: 'center', width: '100%' }}
+              className="carousel-slide-item"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.4}
+              onDragEnd={handleDragEnd}
+              whileGrab={{ cursor: 'grabbing', scale: 1.03 }}
             >
+              {/* Continuous floating animation */}
               <motion.img 
-                src={carouselItems[currentIndex].src} 
-                alt={carouselItems[currentIndex].title}
-                style={{ height: '300px', objectFit: 'contain' }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                src={currentItem.src} 
+                alt={currentItem.title}
+                className="carousel-product-img"
+                animate={{ 
+                  y: [0, -16, 0],
+                  rotate: [0, 1.5, -1.5, 0]
+                }}
+                transition={{ 
+                  duration: 3.8, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
               />
             </motion.div>
           </AnimatePresence>
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div 
-            key={`desc-${currentIndex}`}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.4 }}
-            style={{
-              marginTop: '1.5rem',
-              background: 'var(--bg-white)', padding: '1.25rem', 
-              borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)',
-              zIndex: 10, width: '90%', maxWidth: '320px', textAlign: 'center'
-            }}
-          >
-            <div style={{ color: 'var(--primary-orange)', fontWeight: 'bold', marginBottom: '0.25rem', fontSize: '0.9rem' }}>TOP SELLER</div>
-            <div style={{ color: 'var(--deep-blue)', fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{carouselItems[currentIndex].title}</div>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.4' }}>{carouselItems[currentIndex].desc}</div>
-          </motion.div>
-        </AnimatePresence>
+        {/* Slide Info & Navigation Controls */}
+        <div className="carousel-info">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`info-${currentIndex}`}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="carousel-product-title">{currentItem.title}</h3>
+              <p className="carousel-product-desc">{currentItem.desc}</p>
+            </motion.div>
+          </AnimatePresence>
 
+          <div className="carousel-controls">
+            <motion.button 
+              className="carousel-arrow"
+              onClick={handlePrev}
+              whileHover={{ scale: 1.15, backgroundColor: "var(--primary-orange)", color: "#FFF" }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Previous product"
+            >
+              <ChevronLeft size={20} />
+            </motion.button>
+
+            {/* Dots */}
+            <div className="carousel-dots">
+              {carouselItems.slice(0, 6).map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`dot ${idx === (currentIndex % 6) ? 'active' : ''}`}
+                  onClick={() => {
+                    setDirection(idx > (currentIndex % 6) ? 1 : -1);
+                    setCurrentIndex(idx);
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <motion.button 
+              className="carousel-arrow"
+              onClick={handleNext}
+              whileHover={{ scale: 1.15, backgroundColor: "var(--primary-orange)", color: "#FFF" }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Next product"
+            >
+              <ChevronRight size={20} />
+            </motion.button>
+          </div>
+
+          <motion.button
+            className="carousel-view-btn"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => navigate('/products')}
+          >
+            <span>Explore Full Catalog</span>
+            <ArrowRight size={16} />
+          </motion.button>
+        </div>
       </div>
     </motion.div>
   );
