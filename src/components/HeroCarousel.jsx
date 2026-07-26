@@ -129,6 +129,9 @@ const HeroCarousel = () => {
                 src={currentItem.src} 
                 alt={currentItem.title}
                 className="carousel-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
                 animate={{ 
                   y: [0, -16, 0],
                   rotate: [0, 1.5, -1.5, 0]

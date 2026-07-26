@@ -283,6 +283,8 @@ const Home = () => {
                     <motion.img 
                       src={item.img} 
                       alt={item.name} 
+                      loading="lazy"
+                      decoding="async"
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     />
@@ -317,6 +319,8 @@ const Home = () => {
                     <motion.img 
                       src={item.img} 
                       alt={item.name} 
+                      loading="lazy"
+                      decoding="async"
                       animate={{ y: [0, -6, 0] }}
                       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                     />

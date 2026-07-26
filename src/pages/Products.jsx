@@ -335,6 +335,8 @@ const Products = () => {
                   <motion.img 
                     src={product.image} 
                     alt={product.name} 
+                    loading="lazy"
+                    decoding="async"
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.3 }}
                   />
