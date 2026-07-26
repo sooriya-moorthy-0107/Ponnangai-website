@@ -1,0 +1,185 @@
+.cinematic-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(120% 140% at 20% 10%, #1E3A8A 0%, #0F172A 55%, #020617 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: opacity, transform, filter;
+  transform: translateZ(0);
+}
+
+.loader-ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.loader-blob-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: rgba(37, 99, 235, 0.45);
+  opacity: 0.6;
+}
+
+.loader-blob-2 {
+  width: 350px;
+  height: 350px;
+  bottom: -100px;
+  right: -80px;
+  background: rgba(255, 109, 0, 0.4);
+  opacity: 0.5;
+}
+
+.loader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  z-index: 5;
+}
+
+.loader-glass-stage {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Falling droplet that lands in the center of the stage */
+.loader-droplet {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #FFFFFF, 0 0 30px var(--orange-400, #FF9E40);
+  transform-origin: 50% 50%;
+  animation: loaderFall 0.55s cubic-bezier(.55, 0, .1, 1) forwards;
+  z-index: 10;
+  will-change: transform, opacity;
+}
+
+@keyframes loaderFall {
+  0%   { transform: translateY(-70px) scale(0.6); opacity: 0; }
+  65%  { opacity: 1; }
+  80%  { transform: translateY(85px) scale(1.3, 0.7); opacity: 1; }
+  100% { transform: translateY(85px) scale(0.001); opacity: 0; }
+}
+
+/* Official Logo reveal via clip-path circle expanding from landing point */
+.loader-logo-reveal {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(0px at 50% 50%);
+  animation: loaderReveal 0.65s cubic-bezier(.2, .8, .2, 1) forwards;
+  animation-delay: 0.45s;
+  will-change: clip-path;
+}
+
+@keyframes loaderReveal {
+  to { clip-path: circle(160px at 50% 50%); }
+}
+
+/* The actual P logo inside the circle */
+.loader-stage-logo {
+  width: 125px;
+  height: auto;
+  max-height: 125px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(255, 109, 0, 0.45)) drop-shadow(0 0 15px rgba(37, 99, 235, 0.35));
+  animation: logoPulse 2s ease-in-out infinite alternate;
+  animation-delay: 0.8s;
+  will-change: transform, filter;
+}
+
+@keyframes logoPulse {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.06); filter: drop-shadow(0 15px 30px rgba(255, 109, 0, 0.65)) drop-shadow(0 0 20px rgba(37, 99, 235, 0.5)); }
+}
+
+/* Shine sweep overlay across our logo inside the circle */
+.loader-logo-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translate3d(-120px, 0, 0) skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  animation: logoShineSweep 0.75s ease forwards;
+  animation-delay: 1.05s;
+  will-change: transform, opacity;
+}
+
+@keyframes logoShineSweep {
+  0%   { transform: translate3d(-120px, 0, 0) skewX(-20deg); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translate3d(220px, 0, 0) skewX(-20deg); opacity: 0; }
+}
+
+.loader-wordmark {
+  text-align: center;
+  opacity: 0;
+  animation: loaderWordIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1.0s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes loaderWordIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.loader-wordmark h1 {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.loader-wordmark p {
+  margin: 0;
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange-400, #FF9E40);
+}

@@ -6,11 +6,15 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import BrochureFab from './components/BrochureFab';
+import CinematicLoader from './components/CinematicLoader';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
   return (
     <div className="app-container">
+      <ScrollToTop />
+      <CinematicLoader />
       <Navbar />
       <main className="main-content">
         <Routes>

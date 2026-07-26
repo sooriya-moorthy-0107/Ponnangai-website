@@ -68,12 +68,14 @@
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: var(--shadow-sm);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-
+  position: relative;
+  overflow: hidden;
 }
 
 .product-card:hover {
-  border-color: var(--primary-orange);
-  box-shadow: 0 15px 35px rgba(255, 109, 0, 0.15);
+  border-color: var(--orange-500);
+  box-shadow: 0 15px 35px rgba(255, 109, 0, 0.18);
+  transform: translateY(-8px);
 }
 
 .product-card-header {
@@ -162,12 +164,14 @@
 }
 
 .mini-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  background: rgba(15, 23, 42, 0.05);
-  color: var(--deep-blue);
-  padding: 0.25rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--blue-700);
+  padding: 0.25rem 0.65rem;
   border-radius: 6px;
+  letter-spacing: 0.03em;
 }
 
 .w-full {

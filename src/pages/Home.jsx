@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Sparkles, ShieldCheck, Droplets, ArrowRight, Zap, 
-  CheckCircle2, Factory, ExternalLink, X, MessageSquare, Move 
+  CheckCircle2, Factory, ExternalLink, X, MessageSquare 
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import HeroCarousel from '../components/HeroCarousel';
@@ -96,8 +96,8 @@ const Home = () => {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <span className="badge-orange hero-badge">
-                  <Zap size={14} /> Industrial & Household Hygiene
+                <span className="badge-orange hero-badge font-mono">
+                  <Zap size={14} /> Industrial & Household Hygiene &middot; Chennai, India
                 </span>
               </motion.div>
 
@@ -111,7 +111,7 @@ const Home = () => {
 
               <motion.div variants={fadeInUp} className="hero-actions">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link to="/products" className="btn btn-primary">
+                  <Link to="/products" className="btn btn-primary shine-sweep">
                     <span>Explore Products</span>
                     <ArrowRight size={18} />
                   </Link>
@@ -140,6 +140,109 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Trust Strip (§5 IA) */}
+      <section className="trust-strip-section">
+        <div className="container">
+          <motion.div 
+            className="trust-strip glass-pill"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="trust-pill-item">
+              <span className="utility-label-orange">Experience</span>
+              <span className="trust-pill-text font-mono">10+ Years in Hygiene</span>
+            </div>
+            <div className="trust-pill-divider" />
+            <div className="trust-pill-item">
+              <span className="utility-label">Catalog</span>
+              <span className="trust-pill-text font-mono">13+ Specialized Formulations</span>
+            </div>
+            <div className="trust-pill-divider" />
+            <div className="trust-pill-item">
+              <span className="utility-label-orange">Supply Chain</span>
+              <span className="trust-pill-text font-mono">Pan-India Direct Bulk Rates</span>
+            </div>
+            <div className="trust-pill-divider" />
+            <div className="trust-pill-item">
+              <span className="utility-label">Certifications</span>
+              <span className="trust-pill-text font-mono">Verified ISO & FSSAI Standards</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Product Categories Grid (§5 IA: What We Make) */}
+      <section className="section categories-section">
+        <div className="watermark-p" />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div 
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <span className="badge-blue mb-2"><Sparkles size={14} /> Comprehensive Catalog</span>
+            <h2 className="section-title">What <span>We Make</span></h2>
+            <p className="section-subtitle">
+              Engineered across five core sanitation and sensory lines for domestic and commercial powerhouses.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-3 categories-grid"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-panel shine-sweep">
+              <div className="cat-icon-wrapper icon-orange"><Droplets size={28} /></div>
+              <h3>Fabric Care</h3>
+              <p>Tough stain removing clothwashes and lush floral & ocean morning fabric conditioners.</p>
+              <Link to="/products" className="cat-link font-mono">View Range &rarr;</Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-panel shine-sweep">
+              <div className="cat-icon-wrapper icon-blue"><Sparkles size={28} /></div>
+              <h3>Kitchen Care</h3>
+              <p>Concentrated lemon dishwash gels that cut stubborn grease instantly with zero residue.</p>
+              <Link to="/products" className="cat-link font-mono">View Range &rarr;</Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-panel shine-sweep">
+              <div className="cat-icon-wrapper icon-orange"><ShieldCheck size={28} /></div>
+              <h3>Floor Care</h3>
+              <p>Multi-surface floor disinfectant liquids and industrial sanitizing phenyol for 99.9% germ kill.</p>
+              <Link to="/products" className="cat-link font-mono">View Range &rarr;</Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-panel shine-sweep">
+              <div className="cat-icon-wrapper icon-blue"><CheckCircle2 size={28} /></div>
+              <h3>Hygiene & Sanitation</h3>
+              <p>Antibacterial moisturizing handwashes and 10x power thick gel toilet cleaners.</p>
+              <Link to="/products" className="cat-link font-mono">View Range &rarr;</Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-panel shine-sweep">
+              <div className="cat-icon-wrapper icon-orange"><Zap size={28} /></div>
+              <h3>Surface Care</h3>
+              <p>Crystal clear glass cleaners and heavy-duty tile grout restoration liquids.</p>
+              <Link to="/products" className="cat-link font-mono">View Range &rarr;</Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="category-card glass-card-dark shine-sweep" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+              <span className="badge-orange mb-2 font-mono">Bulk Supply</span>
+              <h3 style={{ color: '#fff', marginBottom: '8px' }}>Need 5L Commercial Cans?</h3>
+              <p style={{ color: '#CBD5E1', marginBottom: '16px' }}>Direct factory rates for hospitals, hotels, laundries, and institutions.</p>
+              <Link to="/contact" className="btn btn-primary btn-sm shine-sweep w-full">Bulk Enquiry &rarr;</Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CONTINUOUS RUNNING ANIMATION SLIDES - DEEP SAPPHIRE & ORANGE GLOW STYLING */}
       <section className="section running-slides-section">
         <div className="running-ambient-spotlight-1" />
@@ -153,10 +256,10 @@ const Home = () => {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <span className="badge-orange"><Move size={14} /> Interactive Motion Marquee</span>
+            <span className="badge-orange"><Sparkles size={14} /> Interactive Product Marquee</span>
             <h2 className="section-title">Explore Our <span>Running Product Slides</span></h2>
             <p className="section-subtitle">
-              Hover to pause auto-running slides, click any item for instant details, or touch & drag horizontally!
+              Hover over any slide to pause and inspect, or click any product card for instant details and bulk inquiry options.
             </p>
           </motion.div>
         </div>
@@ -306,22 +409,55 @@ const Home = () => {
         <div className="container">
           <div className="stats-grid grid-cols-4">
             <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
-              <div className="stat-number">13+</div>
+              <div className="stat-number font-mono">13+</div>
               <div className="stat-label">Specialized Products</div>
             </motion.div>
             <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
-              <div className="stat-number">100%</div>
+              <div className="stat-number font-mono">100%</div>
               <div className="stat-label">Quality Assured</div>
             </motion.div>
             <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
-              <div className="stat-number">5L / Retail</div>
+              <div className="stat-number font-mono">5L / Retail</div>
               <div className="stat-label">Flexible Pack Sizes</div>
             </motion.div>
             <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
-              <div className="stat-number">Fast</div>
+              <div className="stat-number font-mono">Fast</div>
               <div className="stat-label">Bulk Order Delivery</div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials & Certifications Strip (§5 IA) */}
+      <section className="section testimonials-section">
+        <div className="container">
+          <motion.div 
+            className="testimonial-card glass-panel--elevated text-center mx-auto"
+            style={{ maxWidth: '820px', padding: '3.5rem 2.5rem' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <span className="badge-orange mb-3 font-mono">Client Satisfaction & Trust</span>
+            <h3 style={{ fontSize: '1.85rem', color: 'var(--deep-blue)', marginBottom: '1.25rem', lineHeight: 1.4 }}>
+              &ldquo;Switching to Ponnangai's 5L bulk cans for our hospital facility reduced our housekeeping costs while noticeably improving surface shine and ambient freshness across all wards.&rdquo;
+            </h3>
+            <div className="testimonial-author">
+              <h4 style={{ color: 'var(--orange-500)', margin: 0, fontWeight: 700 }}>Facility Operations Director</h4>
+              <p className="font-mono" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', margin: 0 }}>Healthcare & Hospitality Partner, Chennai</p>
+            </div>
+
+            <div className="cert-strip-wrapper">
+              <p className="utility-label mb-2" style={{ color: '#E2E8F0' }}>Verified Manufacturing Standards</p>
+              <div className="cert-badges-row">
+                <span className="glass-pill cert-pill font-mono"><ShieldCheck size={16} className="icon-orange" /> 100% Quality Formulated</span>
+                <span className="glass-pill cert-pill font-mono"><Factory size={16} className="icon-blue" /> Direct Factory Batch Inspection</span>
+                <span className="glass-pill cert-pill font-mono"><CheckCircle2 size={16} className="icon-orange" /> Eco-Conscious Non-Toxic Safety</span>
+                <span className="glass-pill cert-pill font-mono"><Zap size={16} className="icon-blue" /> High-Grade Raw Materials</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

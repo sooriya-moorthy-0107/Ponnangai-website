@@ -313,13 +313,17 @@ const Products = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="product-card glass-panel"
-                whileHover={{ y: -8 }}
+                className="product-card glass-panel shine-sweep"
               >
                 <div className="product-card-header">
-                  <span className="badge-blue">{product.category}</span>
+                  <div>
+                    <span className="badge-blue mb-1">{product.category}</span>
+                    <span className="font-mono" style={{ fontSize: '0.72rem', color: '#64748B', display: 'block', marginTop: '3px', fontWeight: 600 }}>
+                      SKU: PE-{product.category.slice(0,3).toUpperCase()}-{100 + product.id}
+                    </span>
+                  </div>
                   <button 
-                    className="card-cart-btn"
+                    className="card-cart-btn shine-sweep"
                     onClick={() => addToCart(product)}
                     title="Add to inquiry list"
                   >
@@ -344,16 +348,16 @@ const Products = () => {
                     <span className="variant-label">Available Pack Sizes:</span>
                     <div className="variant-tags-list">
                       {product.variants.slice(0, 3).map((v, i) => (
-                        <span key={i} className="mini-tag">{v.label}</span>
+                        <span key={i} className="mini-tag font-mono">{v.label}</span>
                       ))}
-                      {product.variants.length > 3 && <span className="mini-tag">+{product.variants.length - 3} more</span>}
+                      {product.variants.length > 3 && <span className="mini-tag font-mono">+{product.variants.length - 3} more</span>}
                     </div>
                   </div>
                 </div>
 
                 <div className="product-card-footer">
                   <button 
-                    className="btn btn-outline-orange w-full"
+                    className="btn btn-outline-orange w-full shine-sweep"
                     onClick={() => setSelectedProduct(product)}
                   >
                     <Info size={16} />
@@ -376,7 +380,12 @@ const Products = () => {
           <div className="modal-product-wrapper">
             <ProductVariantCarousel variants={selectedProduct.variants} />
             <div className="modal-product-info">
-              <span className="badge-blue mb-2">{selectedProduct.category}</span>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap' }}>
+                <span className="badge-blue">{selectedProduct.category}</span>
+                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#64748B', background: '#F1F5F9', padding: '3px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                  SKU: PE-{selectedProduct.category.slice(0,3).toUpperCase()}-{100 + selectedProduct.id}
+                </span>
+              </div>
               <h3>{selectedProduct.name}</h3>
               <p>{selectedProduct.description}</p>
 

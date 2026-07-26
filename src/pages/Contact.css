@@ -223,6 +223,15 @@
 }
 
 /* Redesigned Glowing Centered Contact Button */
+.form-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
 .btn-contact-submit {
   display: inline-flex;
   align-items: center;
@@ -239,6 +248,30 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-download-brochure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1.5px solid var(--accent-blue);
+  color: var(--accent-blue);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-download-brochure:hover {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 }
 
 .btn-icon-circle {

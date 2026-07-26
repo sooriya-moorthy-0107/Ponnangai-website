@@ -1,18 +1,46 @@
 :root {
-  /* Strict Brand Color Palette: Blue, Orange, White, Black */
-  --primary-orange: #FF6D00;
-  --primary-orange-hover: #FF5722;
-  --primary-orange-light: #FFF0E6;
-  --primary-orange-glow: rgba(255, 109, 0, 0.4);
+  /* Expanded Brand Color Palette: Shades of Blue & Orange + White & Black */
+  --orange-50: #FFF8F2;
+  --orange-100: #FFF0E6;
+  --orange-200: #FFDCC2;
+  --orange-300: #FFBD8A;
+  --orange-400: #FF964A;
+  --orange-500: #FF6D00;
+  --orange-600: #E65C00;
+  --orange-700: #B84500;
+  --orange-glow: rgba(255, 109, 0, 0.4);
+  --orange-glow-light: rgba(255, 109, 0, 0.2);
+  --orange-glow-intense: rgba(255, 109, 0, 0.65);
 
-  --deep-blue: #0F172A;
-  --navy-blue: #1E293B;
-  --accent-blue: #2563EB;
-  --bright-blue: #3B82F6;
-  --deep-blue-glow: rgba(37, 99, 235, 0.35);
+  --blue-50: #F0F6FF;
+  --blue-100: #E0EEFF;
+  --blue-200: #BBDDFF;
+  --blue-300: #7CC2FF;
+  --blue-400: #389FFF;
+  --blue-500: #2563EB;
+  --blue-600: #1D4ED8;
+  --blue-700: #1E3A8A;
+  --blue-800: #1E293B;
+  --blue-900: #0F172A;
+  --blue-950: #050811;
+  --blue-glow: rgba(37, 99, 235, 0.35);
+  --blue-glow-light: rgba(37, 99, 235, 0.18);
+  --blue-glow-intense: rgba(37, 99, 235, 0.6);
 
-  --obsidian-black: #050811;
-  --charcoal-black: #0F172A;
+  /* Legacy aliases for backward compatibility */
+  --primary-orange: var(--orange-500);
+  --primary-orange-hover: var(--orange-600);
+  --primary-orange-light: var(--orange-100);
+  --primary-orange-glow: var(--orange-glow);
+
+  --deep-blue: var(--blue-900);
+  --navy-blue: var(--blue-800);
+  --accent-blue: var(--blue-500);
+  --bright-blue: var(--blue-400);
+  --deep-blue-glow: var(--blue-glow);
+
+  --obsidian-black: var(--blue-950);
+  --charcoal-black: var(--blue-900);
 
   /* Neutrals & Backgrounds */
   --bg-white: #FFFFFF;
@@ -28,6 +56,7 @@
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 
   /* Utilities */
   --radius-sm: 8px;
@@ -39,8 +68,8 @@
   --shadow-sm: 0 4px 10px rgba(15, 23, 42, 0.04);
   --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
-  --shadow-orange: 0 12px 30px var(--primary-orange-glow);
-  --shadow-blue: 0 12px 30px var(--deep-blue-glow);
+  --shadow-orange: 0 12px 30px var(--orange-glow);
+  --shadow-blue: 0 12px 30px var(--blue-glow);
   --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
 }
 
@@ -113,6 +142,30 @@ img {
 
 .section {
   padding: 5rem 0;
+  position: relative;
+}
+
+/* Typography Utilities */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.utility-label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  font-weight: 600;
+}
+
+.utility-label-orange {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-500);
+  font-weight: 600;
 }
 
 /* Section Headings */
@@ -126,7 +179,7 @@ img {
 }
 
 .section-title span {
-  background: linear-gradient(135deg, var(--primary-orange) 0%, #FF8000 100%);
+  background: linear-gradient(135deg, var(--orange-500) 0%, var(--orange-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -139,24 +192,118 @@ img {
   margin: 0 auto 3rem auto;
 }
 
-/* Glassmorphism Effect */
+/* Glassmorphism Effect System (§3.3 & Liquid-Glass Shine Highlight) */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: var(--glass-shadow);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 
+    0 8px 32px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8); /* top edge highlight = "shine" */
   border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel--elevated {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-dark {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-light);
-  box-shadow: 0 20px 40px rgba(5, 8, 17, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(5, 8, 17, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 15px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-full);
+}
+
+@supports not (backdrop-filter: blur(18px)) {
+  .glass-panel, .glass-panel--elevated, .glass-pill {
+    background: #FFFFFF;
+  }
+  .glass-card-dark {
+    background: var(--blue-900);
+  }
+}
+
+/* Signature Shine Sweep Animation (§3.4 & §6) */
+.shine-sweep, .glass-panel, .glass-panel--elevated, .glass-card-dark, .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-sweep::after, .glass-panel::after, .glass-panel--elevated::after, .glass-card-dark::after, .btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translate3d(-180%, 0, 0) rotate(28deg);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform, opacity;
+}
+
+.shine-sweep:hover::after, .glass-panel:hover::after, .glass-panel--elevated:hover::after, .glass-card-dark:hover::after, .btn:hover::after {
+  transform: translate3d(380%, 0, 0) rotate(28deg);
+  opacity: 1;
+}
+
+/* Watermark Signature Motif (§4) */
+.watermark-p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  background-image: url('/assets/logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(100%) contrast(200%);
 }
 
 /* Modern Motion Buttons */
@@ -231,9 +378,10 @@ img {
   background: var(--primary-orange-light);
   color: var(--primary-orange);
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -242,12 +390,13 @@ img {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.9rem;
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(37, 99, 235, 0.12);
   color: var(--accent-blue);
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -274,13 +423,13 @@ img {
 
 /* Marquee / Running Animation Keyframes */
 @keyframes marqueeLeft {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0%, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes marqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0%); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0%, 0, 0); }
 }
 
 .marquee-container {
@@ -314,11 +463,13 @@ img {
 .marquee-track-left {
   display: inline-flex;
   animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
 }
 
 .marquee-track-right {
   display: inline-flex;
   animation: marqueeRight 35s linear infinite;
+  will-change: transform;
 }
 
 .marquee-container:hover .marquee-track-left,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { Sparkles, ShieldCheck, Factory, Award, CheckCircle } from 'lucide-react';
 import './About.css';
 
@@ -51,7 +52,7 @@ const About = () => {
       <section className="about-story-section container">
         <div className="story-grid">
           <motion.div 
-            className="story-text"
+            className="story-text glass-panel story-panel shine-sweep"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
@@ -68,21 +69,21 @@ const About = () => {
             <motion.div variants={fadeInUp} className="story-features">
               <div className="story-feat-item">
                 <CheckCircle className="story-feat-icon" size={20} />
-                <span>Industrial Grade Raw Formulations</span>
+                <span className="font-mono" style={{ fontSize: '0.92rem' }}>Industrial Grade Raw Formulations</span>
               </div>
               <div className="story-feat-item">
                 <CheckCircle className="story-feat-icon" size={20} />
-                <span>Strict Batch Quality Inspection</span>
+                <span className="font-mono" style={{ fontSize: '0.92rem' }}>Strict Batch Quality Inspection</span>
               </div>
               <div className="story-feat-item">
                 <CheckCircle className="story-feat-icon" size={20} />
-                <span>Direct Factory Bulk Ordering</span>
+                <span className="font-mono" style={{ fontSize: '0.92rem' }}>Direct Factory Bulk Ordering</span>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div 
-            className="story-image-card glass-panel"
+            className="story-image-card glass-panel shine-sweep"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -94,7 +95,7 @@ const About = () => {
               <Factory size={28} className="overlay-icon" />
               <div>
                 <h4>State-of-the-Art Production</h4>
-                <p>Manufacturing facility located in Aynavaram, Chennai</p>
+                <p className="font-mono">Manufacturing facility located in Aynavaram, Chennai</p>
               </div>
             </div>
           </motion.div>
@@ -125,8 +126,8 @@ const About = () => {
 
           <div className="grid grid-cols-3 values-grid">
             <motion.div 
-              className="value-card glass-panel"
-              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--primary-orange-glow)" }}
+              className="value-card glass-panel shine-sweep"
+              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--orange-glow)" }}
             >
               <div className="value-icon icon-orange"><ShieldCheck size={32} /></div>
               <h3>Uncompromised Safety</h3>
@@ -134,8 +135,8 @@ const About = () => {
             </motion.div>
 
             <motion.div 
-              className="value-card glass-panel"
-              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--deep-blue-glow)" }}
+              className="value-card glass-panel shine-sweep"
+              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--blue-glow)" }}
             >
               <div className="value-icon icon-blue"><Award size={32} /></div>
               <h3>Guaranteed Efficacy</h3>
@@ -143,14 +144,43 @@ const About = () => {
             </motion.div>
 
             <motion.div 
-              className="value-card glass-panel"
-              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--primary-orange-glow)" }}
+              className="value-card glass-panel shine-sweep"
+              whileHover={{ y: -8, boxShadow: "0 20px 40px var(--orange-glow)" }}
             >
               <div className="value-icon icon-orange"><Sparkles size={32} /></div>
               <h3>Delightful Fragrances</h3>
               <p>Infused with fresh ocean, floral, and citrus scents that keep environments smelling fresh for hours.</p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Banner (§5 IA) */}
+      <section className="about-cta-banner">
+        <div className="watermark-p" style={{ opacity: 0.05 }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mx-auto"
+            style={{ maxWidth: '680px' }}
+          >
+            <span className="badge-orange mb-3 font-mono">Partner With Us</span>
+            <h2 style={{ fontSize: '2.4rem', color: '#FFFFFF', marginBottom: '1rem', fontWeight: 800 }}>Ready to Order in <span style={{ color: 'var(--orange-400)' }}>Commercial Bulk?</span></h2>
+            <p style={{ color: '#CBD5E1', fontSize: '1.1rem', marginBottom: '2.25rem', lineHeight: 1.6 }}>
+              Get in touch with our Chennai manufacturing team today for custom quotations, 5L institutional cans, and pan-India distribution supply.
+            </p>
+            <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link to="/contact" className="btn btn-primary shine-sweep">
+                <span>Contact Sales &rarr;</span>
+              </Link>
+              <Link to="/products" className="btn btn-outline" style={{ borderColor: '#FFFFFF', color: '#FFFFFF' }}>
+                <span>Browse Range</span>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

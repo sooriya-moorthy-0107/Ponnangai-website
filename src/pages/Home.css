@@ -551,3 +551,154 @@
     padding: 0.9rem 1rem;
   }
 }
+
+/* Trust Strip Section (§5 IA) */
+.trust-strip-section {
+  padding: 1.5rem 0 2.5rem 0;
+  position: relative;
+  z-index: 5;
+  margin-top: -2rem;
+}
+
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.25rem 2rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.trust-pill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.trust-pill-text {
+  color: var(--deep-blue);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.trust-pill-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(15, 23, 42, 0.12);
+}
+
+/* Core Product Categories Grid (§5 IA: What We Make) */
+.categories-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--blue-50) 50%, var(--bg-soft) 100%);
+  padding: 5rem 0;
+}
+
+.categories-grid {
+  margin-top: 1.75rem;
+}
+
+.category-card {
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.cat-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.category-card h3 {
+  font-size: 1.4rem;
+  color: var(--deep-blue);
+}
+
+.category-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.cat-link {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--orange-500);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.category-card:hover .cat-link {
+  color: var(--orange-600);
+  transform: translateX(4px);
+}
+
+/* Testimonials & Quality Strip (§5 IA) */
+.testimonials-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  padding: 6rem 0;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cert-strip-wrapper {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.cert-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+@media (max-width: 880px) {
+  .trust-pill-divider {
+    display: none;
+  }
+  .trust-strip {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}

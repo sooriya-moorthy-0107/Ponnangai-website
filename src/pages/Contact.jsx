@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Sparkles, MessageSquare, Move } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Sparkles, MessageSquare, Download } from 'lucide-react';
 import { toast } from 'sonner';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
@@ -46,7 +46,7 @@ const Contact = () => {
             <span className="badge-orange mb-2"><Sparkles size={14} /> We'd Love to Hear From You</span>
             <h1 className="section-title text-center">Get In <span>Touch With Us</span></h1>
             <p className="section-subtitle text-center">
-              Have questions about our products, bulk pricing, or custom orders? Reach out to our sales & support team. Touch & drag any card to interact!
+              Have questions about our products, bulk pricing, or custom orders? Reach out to our sales & support team.
             </p>
           </motion.div>
         </div>
@@ -57,7 +57,7 @@ const Contact = () => {
         <div className="contact-grid">
           {/* Info Card with Drag Gesture */}
           <motion.div 
-            className="contact-info-card glass-card-dark text-center"
+            className="contact-info-card glass-card-dark shine-sweep text-center"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -66,10 +66,6 @@ const Contact = () => {
             dragElastic={0.15}
             whileGrab={{ cursor: 'grabbing', scale: 1.02 }}
           >
-            <div className="drag-indicator-bar">
-              <Move size={14} /> Drag Card
-            </div>
-
             <div className="info-header text-center">
               <span className="badge-orange mx-auto">Direct Contact</span>
               <h2 className="text-center">Ponnangai Enterprises</h2>
@@ -79,7 +75,7 @@ const Contact = () => {
             <div className="contact-details-list">
               <div className="contact-detail-item centered-item">
                 <div className="detail-icon"><MapPin size={22} /></div>
-                <div className="text-center">
+                <div className="text-center font-mono" style={{ fontSize: '0.88rem' }}>
                   <h4>Manufacturing Unit</h4>
                   <p>2/1 Muthuamman Kovil Street,<br />Thandhai Periyar Nagar, Aynavaram,<br />Chennai - 600023, Tamil Nadu</p>
                 </div>
@@ -87,7 +83,7 @@ const Contact = () => {
 
               <div className="contact-detail-item centered-item">
                 <div className="detail-icon"><Phone size={22} /></div>
-                <div className="text-center">
+                <div className="text-center font-mono" style={{ fontSize: '0.9rem' }}>
                   <h4>Call Us</h4>
                   <p>+91 7092148969<br />+91 9360249450</p>
                 </div>
@@ -95,7 +91,7 @@ const Contact = () => {
 
               <div className="contact-detail-item centered-item">
                 <div className="detail-icon"><Mail size={22} /></div>
-                <div className="text-center">
+                <div className="text-center font-mono" style={{ fontSize: '0.88rem' }}>
                   <h4>Email Us</h4>
                   <p>ponnangaienterprises12@gmail.com</p>
                 </div>
@@ -103,7 +99,7 @@ const Contact = () => {
 
               <div className="contact-detail-item centered-item">
                 <div className="detail-icon"><Clock size={22} /></div>
-                <div className="text-center">
+                <div className="text-center font-mono" style={{ fontSize: '0.85rem' }}>
                   <h4>Business Hours</h4>
                   <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
                 </div>
@@ -129,7 +125,7 @@ const Contact = () => {
 
           {/* Form Card with Drag Gesture & Redesigned Centered Button */}
           <motion.div 
-            className="contact-form-card glass-panel text-center"
+            className="contact-form-card glass-panel shine-sweep text-center"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -138,10 +134,6 @@ const Contact = () => {
             dragElastic={0.15}
             whileGrab={{ cursor: 'grabbing', scale: 1.02 }}
           >
-            <div className="drag-indicator-bar-dark">
-              <Move size={14} /> Drag Form Card
-            </div>
-
             <h3 className="text-center">Send Us a Message</h3>
             <p className="form-subtext text-center">Fill in the details below to launch a direct WhatsApp query to our team.</p>
 
@@ -199,11 +191,11 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Redesigned Glowing Centered Contact Button */}
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+              {/* Redesigned Glowing Centered Contact Buttons */}
+              <div className="form-actions-row">
                 <motion.button 
                   type="submit" 
-                  className="btn-contact-submit"
+                  className="btn-contact-submit shine-sweep"
                   whileHover={{ scale: 1.06, boxShadow: "0 18px 40px rgba(255, 109, 0, 0.45)" }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -212,9 +204,34 @@ const Contact = () => {
                   </div>
                   <span>Send Inquiry via WhatsApp</span>
                 </motion.button>
+
+                <motion.a 
+                  href="/assets/ponnangai_brochure.pdf" 
+                  download="Ponnangai_Brochure.pdf"
+                  className="btn-download-brochure shine-sweep font-mono"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Download size={18} />
+                  <span>Download Brochure</span>
+                </motion.a>
               </div>
             </form>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Wholesale & Institutional Inquiry Banner (§5 IA) */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%)', color: '#fff', textAlign: 'center', padding: '4.5rem 1.5rem', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+        <div className="container" style={{ maxWidth: '750px' }}>
+          <span className="badge-orange mb-3 font-mono">Wholesale & Institutional Supply</span>
+          <h2 style={{ fontSize: '2.2rem', marginBottom: '1rem', color: '#fff', fontWeight: 800 }}>Need Custom 5L <span style={{ color: 'var(--orange-400)' }}>Bulk Formulations?</span></h2>
+          <p style={{ color: '#CBD5E1', fontSize: '1.05rem', marginBottom: '2.25rem', lineHeight: 1.6 }}>
+            We supply hotels, hospital facilities, industrial laundries, and commercial offices across Tamil Nadu and South India with tailored packaging and discounted contract pricing.
+          </p>
+          <a href="https://wa.me/917092148969?text=Hi, I want to enquire about institutional wholesale contract pricing" target="_blank" rel="noopener noreferrer" className="btn btn-primary shine-sweep">
+            <span>Connect With Wholesale Sales &rarr;</span>
+          </a>
         </div>
       </section>
     </div>

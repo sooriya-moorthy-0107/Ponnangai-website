@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, Send } from 'lucide-react';
+import { useLoader } from '../context/LoaderContext';
+import { useEnquiry } from '../context/EnquiryContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { triggerLoader } = useLoader();
+  const { openEnquiry } = useEnquiry();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +36,7 @@ const Navbar = () => {
       transition={{ type: 'spring', stiffness: 120, damping: 20 }}
     >
       <div className="container nav-container">
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" onClick={() => triggerLoader()}>
           <motion.img 
             src="/assets/logo.png" 
             alt="Ponnangai Logo" 
@@ -53,6 +57,9 @@ const Navbar = () => {
                 key={item.path} 
                 to={item.path} 
                 className={`nav-item ${isActive ? 'active' : ''}`}
+                onClick={() => {
+                  if (item.path === '/') triggerLoader();
+                }}
               >
                 <motion.span 
                   whileHover={{ y: -2 }}
@@ -75,10 +82,13 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link to="/contact" className="btn btn-primary nav-cta">
+            <button 
+              onClick={() => openEnquiry()} 
+              className="btn btn-primary nav-cta shine-sweep"
+            >
               <Sparkles size={16} />
               <span>Enquire Now</span>
-            </Link>
+            </button>
           </motion.div>
         </nav>
 
@@ -113,7 +123,10 @@ const Navbar = () => {
                   <Link 
                     to={item.path} 
                     className={`mobile-link ${location.pathname === item.path ? 'active' : ''}`}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      if (item.path === '/') triggerLoader();
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -124,15 +137,17 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <Link 
-                  to="/contact" 
-                  onClick={() => setMobileMenuOpen(false)} 
-                  className="btn btn-primary"
+                <button 
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openEnquiry();
+                  }} 
+                  className="btn btn-primary shine-sweep"
                   style={{ width: '100%', marginTop: '1rem' }}
                 >
                   <Send size={18} />
                   <span>Enquire Now</span>
-                </Link>
+                </button>
               </motion.div>
             </div>
           </motion.div>

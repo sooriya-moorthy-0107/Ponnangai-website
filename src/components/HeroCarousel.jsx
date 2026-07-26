@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, ArrowRight, Pause, Play, Move } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, ArrowRight, Pause, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const carouselItems = [
@@ -85,21 +85,18 @@ const HeroCarousel = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="carousel-card glass-panel">
+      <div className="carousel-card glass-panel shine-sweep">
         {/* Glow ambient halo */}
         <div className="carousel-glow-bg" />
 
         {/* Top Bar */}
         <div className="carousel-top-bar">
-          <span className="badge-orange">
+          <span className="badge-orange font-mono">
             <Sparkles size={14} />
             {currentItem.tag}
           </span>
 
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <span className="drag-hint-badge">
-              <Move size={12} /> Drag to Swipe
-            </span>
             <button 
               className="pause-toggle-btn"
               onClick={() => setIsPaused(!isPaused)}
@@ -199,7 +196,7 @@ const HeroCarousel = () => {
           </div>
 
           <motion.button
-            className="carousel-view-btn"
+            className="carousel-view-btn shine-sweep font-mono"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => navigate('/products')}
