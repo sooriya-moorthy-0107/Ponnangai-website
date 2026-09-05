@@ -4,7 +4,7 @@
   min-height: 100vh;
   background-color: var(--bg-soft);
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .main-content {

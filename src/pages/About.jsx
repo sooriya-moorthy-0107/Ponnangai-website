@@ -165,7 +165,7 @@ const About = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             className="mx-auto"
-            style={{ maxWidth: '680px' }}
+            style={{ maxWidth: '680px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
           >
             <span className="badge-orange mb-3 font-mono">Partner With Us</span>
             <h2 style={{ fontSize: '2.4rem', color: '#FFFFFF', marginBottom: '1rem', fontWeight: 800 }}>Ready to Order in <span style={{ color: 'var(--orange-400)' }}>Commercial Bulk?</span></h2>

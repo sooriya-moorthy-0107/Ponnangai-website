@@ -105,18 +105,18 @@ const Footer = () => {
           <h4>Headquarters</h4>
           <ul className="footer-contact-list">
             <li onClick={(e) => handleIconClick(e, 'map')}>
-              <MapPin size={20} className="icon-orange" />
+              <MapPin size={20} style={{ color: '#FFFFFF' }} />
               <span>
                 2/1 Muthuamman Kovil St, Aynavaram,<br />
                 Chennai - 600023, Tamil Nadu
               </span>
             </li>
             <li onClick={(e) => handleIconClick(e, 'phone')}>
-              <Phone size={20} className="icon-orange" />
+              <Phone size={20} style={{ color: '#FFFFFF' }} />
               <span>+91 7092148969 / 9360249450</span>
             </li>
             <li onClick={(e) => handleIconClick(e, 'mail')}>
-              <Mail size={20} className="icon-orange" />
+              <Mail size={20} style={{ color: '#FFFFFF' }} />
               <span>ponnangaienterprises12@gmail.com</span>
             </li>
           </ul>
