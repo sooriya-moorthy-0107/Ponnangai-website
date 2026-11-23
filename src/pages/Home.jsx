@@ -62,6 +62,10 @@ const Home = () => {
       <Helmet>
         <title>Ponnangai Enterprises | Premium Housekeeping & Cleaning Products</title>
         <meta name="description" content="Manufacturer of high-quality housekeeping products, industrial cleaning liquids, and bulk supplies in Chennai." />
+        <link rel="canonical" href="https://www.ponnangai.com/" />
+        <meta property="og:title" content="Ponnangai Enterprises | Premium Housekeeping & Cleaning Products" />
+        <meta property="og:description" content="Manufacturer of high-quality housekeeping products, industrial cleaning liquids, and bulk supplies in Chennai." />
+        <meta property="og:url" content="https://www.ponnangai.com/" />
       </Helmet>
 
       {/* Hero Section */}

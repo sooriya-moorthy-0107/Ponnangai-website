@@ -239,6 +239,10 @@ const Products = () => {
       <Helmet>
         <title>Products Catalog | Ponnangai Enterprises</title>
         <meta name="description" content="Explore high-performance housekeeping products, cleaning liquids, fabric softeners, and bulk facility supplies." />
+        <link rel="canonical" href="https://www.ponnangai.com/products" />
+        <meta property="og:title" content="Products Catalog | Ponnangai Enterprises" />
+        <meta property="og:description" content="Explore high-performance housekeeping products, cleaning liquids, fabric softeners, and bulk facility supplies." />
+        <meta property="og:url" content="https://www.ponnangai.com/products" />
       </Helmet>
 
       {/* Floating Quote Drawer Button */}

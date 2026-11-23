@@ -24,6 +24,10 @@ const About = () => {
       <Helmet>
         <title>About Us | Ponnangai Enterprises</title>
         <meta name="description" content="Learn about Ponnangai Enterprises, a trusted manufacturer of high-performance housekeeping products and industrial hygiene solutions in Chennai." />
+        <link rel="canonical" href="https://www.ponnangai.com/about" />
+        <meta property="og:title" content="About Us | Ponnangai Enterprises" />
+        <meta property="og:description" content="Learn about Ponnangai Enterprises, a trusted manufacturer of high-performance housekeeping products and industrial hygiene solutions in Chennai." />
+        <meta property="og:url" content="https://www.ponnangai.com/about" />
       </Helmet>
 
       {/* Hero Banner */}

@@ -32,6 +32,10 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us | Ponnangai Enterprises</title>
         <meta name="description" content="Get in touch with Ponnangai Enterprises for inquiries about bulk housekeeping products, cleaning liquids, and enterprise supply." />
+        <link rel="canonical" href="https://www.ponnangai.com/contact" />
+        <meta property="og:title" content="Contact Us | Ponnangai Enterprises" />
+        <meta property="og:description" content="Get in touch with Ponnangai Enterprises for inquiries about bulk housekeeping products, cleaning liquids, and enterprise supply." />
+        <meta property="og:url" content="https://www.ponnangai.com/contact" />
       </Helmet>
 
       {/* Header Banner */}

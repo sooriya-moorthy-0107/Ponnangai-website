@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ponnangai.com/sitemap.xml
+Sitemap: https://www.ponnangai.com/sitemap.xml
